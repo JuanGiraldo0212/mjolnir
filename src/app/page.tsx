@@ -1,47 +1,28 @@
-import Image from "next/image";
+import InsightCard from "@/components/weight-page/insight-card";
+import WeightForm from "@/components/weight-page/weight-form";
+import GraphCard from "@/components/weight-page/weight-graph/graph-card";
 
 export default function Home() {
   return (
     <>
       <main className="w-full p-5 flex flex-col gap-y-3">
-        <header className="border-2 border-gray-400 rounded-md p-2 text-center">
-          <h1>Mjolnir</h1>
+        <header className="mb-2 p-2 border-b border-black-900 shadow-md">
+          <h1 className="font-bold text-3xl">Good morning, Peti</h1>
         </header>
-        <div className="h-fit w-full flex flex-col gap-y-2">
-          <div className="border-2 border-gray-400 rounded-md px-5 py-2">
-            <form action="logWeight" className="flex gap-x-2 justify-center">
-              <input
-                className="text-center w-[4rem] p-2 border-1 border-gray-300 rounded-md"
-                type="text"
-                name="weight"
-                placeholder="kg"
-              />
-              <button className="bg-black rounded-md text-white px-2 py-1">
-                Log weight
-              </button>
-            </form>
-          </div>
-          <div className="border-2 border-gray-400 rounded-md h-[10rem] w-full text-center ">
-            <p>Weight graph</p>
-          </div>
-          <div className="border-2 border-gray-400 rounded-md h-[10rem] w-full text-center ">
-            <p>Insights 1</p>
-          </div>
-          <div className="border-2 border-gray-400 rounded-md h-[10rem] w-full text-center ">
-            <p>Insights 2</p>
-          </div>
-        </div>
+        <h1 className="text-xl">Weight dashboard</h1>
+        <WeightForm />
+        <GraphCard />
+        <InsightCard
+          title="Insight 1"
+          description="Learn from your insight 1"
+          content={"insight content"}
+        />
+        <InsightCard
+          title="Insight 2"
+          description="Learn from your insight 2"
+          content={"insight content"}
+        />
       </main>
-      <footer className="fixed bottom-0 left-0 w-full border-t border-gray-300 shadow-md z-50">
-        <div className="flex justify-around items-center h-16">
-          <button className="flex flex-col items-center text-sm text-gray-700 hover:text-black">
-            <span>Weight</span>
-          </button>
-          <button className="flex flex-col items-center text-sm text-gray-700 hover:text-black">
-            <span>Coach</span>
-          </button>
-        </div>
-      </footer>
     </>
   );
 }
