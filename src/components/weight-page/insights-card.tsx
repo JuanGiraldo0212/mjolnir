@@ -40,43 +40,39 @@ const InsightCard = () => {
       value: weeklyAverageChange?.toFixed(2) ?? "Calculating",
       unit: "kg per week",
       title: "Weekly weight change",
-      description: `Your current weekly rate of weight ${
-        weeklyAverageChange
+      description: `Your current weekly rate of weight ${weeklyAverageChange
           ? weeklyAverageChange < 0
             ? "loss"
             : "gain"
           : "loss or gain"
-      } over the past three weeks`,
+        } over the past three weeks`,
     },
     {
       value: estimatedDeficitOrSurplus?.toFixed(0) ?? "Calculating",
       unit: "kcal per day",
-      title: `Energy ${
-        estimatedDeficitOrSurplus
+      title: `Energy ${estimatedDeficitOrSurplus
           ? estimatedDeficitOrSurplus < 0
             ? "deficit"
             : "surplus"
           : "deficit or surplus"
-      }`,
-      description: `An estimate of your average daily caloric ${
-        estimatedDeficitOrSurplus
+        }`,
+      description: `An estimate of your average daily caloric ${estimatedDeficitOrSurplus
           ? estimatedDeficitOrSurplus < 0
             ? "deficit"
             : "surplus"
           : "deficit or surplus"
-      }, based on your rate of weight loss over the past three weeks`,
+        }, based on your rate of weight loss over the past three weeks`,
     },
     {
       value: projectedWeight30Days?.toFixed(2) ?? "Calculating",
       unit: "kg",
       title: "30-day projection",
-      description: `Your projected weight in 30 days if your current rate of weight ${
-        weeklyAverageChange
+      description: `Your projected weight in 30 days if your current rate of weight ${weeklyAverageChange
           ? weeklyAverageChange < 0
             ? "loss"
             : "gain"
           : "loss or gain"
-      } continues`,
+        } continues`,
     },
   ];
 
@@ -84,8 +80,8 @@ const InsightCard = () => {
     <Card>
       <CardContent>
         <div className="flex flex-col gap-y-2 h-140">
-          {insights.map((insight) => (
-            <InsightItem insight={insight} />
+          {insights.map((insight, index) => (
+            <InsightItem key={index} insight={insight} />
           ))}
         </div>
       </CardContent>

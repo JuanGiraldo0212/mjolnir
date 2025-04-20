@@ -57,7 +57,7 @@ export default function CoachPage() {
     <>
       <main className="w-full p-5 flex flex-col gap-y-3">
         <header className="mb-2 p-2 border-b border-black-900 shadow-md">
-          <h1 className="font-bold text-3xl">Coach Page</h1>
+          <h1 className="font-bold text-3xl">Strength Page</h1>
         </header>
         <div>
           {!workingOut ? (<div className="flex flex-row gap-x-2">
@@ -79,13 +79,15 @@ export default function CoachPage() {
             <p>00:12:00</p>
           </div>)}
           <div className="p-2">
-            <h1 className="font-bold underline">{new Date().toDateString()} - Leg Day</h1>
+            <h1 className="font-bold">{new Date().toDateString()} - Leg Day</h1>
             <p className="pb-2">Overview: 5 exercises - 15 sets</p>
             <div className="flex flex-col gap-y-2">
-              {exercises.map((exercise: SessionExercises) => (
-                <div onClick={() => {
-                  closeCards();
-                  openCard(exercise);
+              {exercises.map((exercise: SessionExercises, id) => (
+                <div key={id} onClick={() => {
+                  if (workingOut) {
+                    closeCards();
+                    openCard(exercise);
+                  }
                 }}>
                   <ExerciseCard open={exercise.active} />
                 </div>
@@ -95,10 +97,12 @@ export default function CoachPage() {
 
           {!workingOut ? (<Button className="w-full" onClick={() => {
             setWorkingOut(true);
+            openCard(exercises[0]);
           }}>
             Start Workout
           </Button>) : <Button className="w-full" variant='destructive' onClick={() => {
             setWorkingOut(false);
+            closeCards();
           }}>Stop Workout</Button>}
         </div>
       </main>

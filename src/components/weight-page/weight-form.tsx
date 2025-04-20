@@ -12,7 +12,7 @@ const WeightForm = () => {
     <div>
       <form action={logWeight} className="flex gap-x-2 justify-center">
         <Input
-          type="text"
+          type="number"
           name="weight"
           placeholder="kg"
           className="w-[50%] text-center"
