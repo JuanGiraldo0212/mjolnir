@@ -1,4 +1,4 @@
-import InsightCard from "@/components/weight-page/insight-card";
+import InsightsCard from "@/components/weight-page/insights-card";
 import WeightForm from "@/components/weight-page/weight-form";
 import GraphCard from "@/components/weight-page/weight-graph/graph-card";
 
@@ -18,18 +18,9 @@ export default function Home() {
           <h1 className="font-bold text-3xl">Good {salute()}, Peti</h1>
         </header>
         <h1 className="text-xl">Weight dashboard</h1>
-        <GraphCard />
         <WeightForm />
-        <InsightCard
-          title="Insight 1"
-          description="Learn from your insight 1"
-          content={"insight content"}
-        />
-        <InsightCard
-          title="Insight 2"
-          description="Learn from your insight 2"
-          content={"insight content"}
-        />
+        <GraphCard />
+        <InsightsCard />
       </main>
     </>
   );

@@ -10,7 +10,7 @@ const Footer = () => {
 
   const links = [
     { href: "/", label: "Weight" },
-    { href: "/strength", label: "Strength" },
+    { href: "/coach", label: "Strength" },
   ];
 
   return (

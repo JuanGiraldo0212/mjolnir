@@ -1,4 +1,4 @@
-import InsightCard from "@/components/weight-page/insight-card";
+import InsightCard from "@/components/weight-page/insights-card";
 import WeightForm from "@/components/weight-page/weight-form";
 import GraphCard from "@/components/weight-page/weight-graph/graph-card";
 
