@@ -9,21 +9,17 @@ const WeightForm = () => {
   };
 
   return (
-    <>
-      <Card>
-        <CardContent>
-          <form action={logWeight} className="flex gap-x-2 justify-center">
-            <Input
-              type="text"
-              name="weight"
-              placeholder="kg"
-              className="max-w-[4.5rem] text-center"
-            />
-            <Button>Log weight</Button>
-          </form>
-        </CardContent>
-      </Card>
-    </>
+    <div>
+      <form action={logWeight} className="flex gap-x-2 justify-center">
+        <Input
+          type="text"
+          name="weight"
+          placeholder="kg"
+          className="w-[50%] text-center"
+        />
+        <Button className="w-[50%]">Log weight</Button>
+      </form>
+    </div>
   );
 };
 
