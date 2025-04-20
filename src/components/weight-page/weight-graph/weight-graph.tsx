@@ -21,16 +21,23 @@ import {
 import {
   ChartConfig,
   ChartContainer,
+  ChartLegend,
+  ChartLegendContent,
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart";
 import { WeightRecord } from "./data";
 import { Period } from "./graph-card";
+import { computeSmoothedWeight } from "./weight-utils";
 
 const chartConfig = {
   weight: {
-    label: "Weight",
+    label: "Scale Weight",
     color: "hsl(var(--chart-1))",
+  },
+  smoothedWeight: {
+    label: "Average weight",
+    color: "hsl(var(--chart-2))",
   },
 } satisfies ChartConfig;
 
@@ -62,6 +69,8 @@ const WeightChart = ({
         return date.toLocaleDateString("en-US", { month: "short" });
     }
   };
+
+  weightData = computeSmoothedWeight(weightData);
 
   return (
     <Card>
@@ -103,12 +112,22 @@ const WeightChart = ({
               />
               <Area
                 dataKey="weight"
-                type="natural"
+                type="linear"
+                dot={true}
                 fill="var(--color-weight)"
-                fillOpacity={0.4}
+                fillOpacity={0}
                 stroke="var(--color-weight)"
                 animationDuration={500}
               />
+              <Area
+                dataKey="smoothedWeight"
+                type="natural"
+                fill="var(--color-smoothedWeight)"
+                fillOpacity={0}
+                stroke="var(--color-smoothedWeight)"
+                animationDuration={500}
+              />
+              <ChartLegend content={<ChartLegendContent />} />
             </AreaChart>
           </ResponsiveContainer>
         </ChartContainer>
