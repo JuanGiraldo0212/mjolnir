@@ -118,7 +118,71 @@ exports.Prisma.UserScalarFieldEnum = {
   id: 'id',
   email: 'email',
   firstName: 'firstName',
-  lastName: 'lastName'
+  lastName: 'lastName',
+  birthDate: 'birthDate',
+  gender: 'gender',
+  weight: 'weight',
+  height: 'height',
+  password: 'password',
+  bodyWeightUnit: 'bodyWeightUnit',
+  exerciseWeightUnit: 'exerciseWeightUnit'
+};
+
+exports.Prisma.ExerciseScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  iconPath: 'iconPath',
+  muscleGroup: 'muscleGroup',
+  description: 'description'
+};
+
+exports.Prisma.UserExerciseScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  currSets: 'currSets',
+  currReps: 'currReps',
+  currWeight: 'currWeight',
+  exerciseId: 'exerciseId',
+  createdAt: 'createdAt'
+};
+
+exports.Prisma.ProtocolScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  createdAt: 'createdAt',
+  startedAt: 'startedAt',
+  active: 'active',
+  userId: 'userId'
+};
+
+exports.Prisma.ProtocolDayScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  order: 'order',
+  recurrent: 'recurrent',
+  protocolId: 'protocolId'
+};
+
+exports.Prisma.WorkoutScalarFieldEnum = {
+  id: 'id',
+  startTime: 'startTime',
+  endTime: 'endTime',
+  protocolDayId: 'protocolDayId'
+};
+
+exports.Prisma.ExerciseRecordScalarFieldEnum = {
+  id: 'id',
+  reps: 'reps',
+  set: 'set',
+  weight: 'weight',
+  workoutId: 'workoutId',
+  userExerciseId: 'userExerciseId'
+};
+
+exports.Prisma.ProtocolDayUserExerciseScalarFieldEnum = {
+  id: 'id',
+  userExerciseId: 'userExerciseId',
+  protocolDayId: 'protocolDayId'
 };
 
 exports.Prisma.SortOrder = {
@@ -133,7 +197,14 @@ exports.Prisma.NullsOrder = {
 
 
 exports.Prisma.ModelName = {
-  User: 'User'
+  User: 'User',
+  Exercise: 'Exercise',
+  UserExercise: 'UserExercise',
+  Protocol: 'Protocol',
+  ProtocolDay: 'ProtocolDay',
+  Workout: 'Workout',
+  ExerciseRecord: 'ExerciseRecord',
+  ProtocolDayUserExercise: 'ProtocolDayUserExercise'
 };
 
 /**

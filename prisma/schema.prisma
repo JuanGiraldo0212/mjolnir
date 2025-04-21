@@ -12,8 +12,90 @@ datasource db {
 }
 
 model User {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  firstName  String?
-  lastName  String?
+  id                 Int            @id @default(autoincrement())
+  email              String         @unique
+  firstName          String?
+  lastName           String?
+  birthDate          DateTime
+  gender             String
+  weight             Float
+  height             Float
+  password           String
+  bodyWeightUnit     String
+  exerciseWeightUnit String
+  userExcercises     UserExercise[]
+  protocols          Protocol[]
+}
+
+model Exercise {
+  id             Int            @id @default(autoincrement())
+  name           String
+  iconPath       String
+  muscleGroup    String
+  description    String
+  userExcercises UserExercise[]
+}
+
+model UserExercise {
+  id                       Int                       @id @default(autoincrement())
+  userId                   Int
+  currSets                 Int
+  currReps                 Int
+  currWeight               Float
+  user                     User                      @relation(fields: [userId], references: [id])
+  exerciseId               Int
+  exercise                 Exercise                  @relation(fields: [exerciseId], references: [id])
+  createdAt                DateTime                  @default(now())
+  exerciseRecords          ExerciseRecord[]
+  protocolDayUserExercises ProtocolDayUserExercise[]
+}
+
+model Protocol {
+  id           Int           @id @default(autoincrement())
+  name         String
+  createdAt    DateTime      @default(now())
+  startedAt    DateTime      @default(now())
+  active       Boolean
+  userId       Int
+  user         User          @relation(fields: [userId], references: [id])
+  protocolDays ProtocolDay[]
+}
+
+model ProtocolDay {
+  id                       Int                       @id @default(autoincrement())
+  name                     String
+  order                    Int
+  recurrent                Boolean
+  protocolId               Int
+  protocol                 Protocol                  @relation(fields: [protocolId], references: [id])
+  workouts                 Workout[]
+  protocolDayUserExercises ProtocolDayUserExercise[]
+}
+
+model Workout {
+  id              Int              @id @default(autoincrement())
+  startTime       DateTime         @default(now())
+  endTime         DateTime
+  protocolDayId   Int
+  protocolDay     ProtocolDay      @relation(fields: [protocolDayId], references: [id])
+  exerciseRecords ExerciseRecord[]
+}
+
+model ExerciseRecord {
+  id             Int          @id @default(autoincrement())
+  reps           Int
+  set            Int
+  weight         Float
+  workoutId      Int
+  workout        Workout      @relation(fields: [workoutId], references: [id])
+  userExerciseId Int
+  userExercise   UserExercise @relation(fields: [userExerciseId], references: [id])
+}
+
+model ProtocolDayUserExercise {
+  id             Int          @id @default(autoincrement())
+  userExerciseId Int
+  userExercise   UserExercise @relation(fields: [userExerciseId], references: [id])
+  protocolDayId  Int
+  protocolDay    ProtocolDay  @relation(fields: [protocolDayId], references: [id])
 }
