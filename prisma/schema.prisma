@@ -12,8 +12,8 @@ datasource db {
 }
 
 model User {
-  id                 Int            @id @default(autoincrement())
-  email              String         @unique
+  id                 Int             @id @default(autoincrement())
+  email              String          @unique
   firstName          String?
   lastName           String?
   birthDate          DateTime
@@ -25,6 +25,7 @@ model User {
   exerciseWeightUnit String
   userExcercises     UserExercise[]
   protocols          Protocol[]
+  weightPrograms     WeightProgram[]
 }
 
 model Exercise {
@@ -98,4 +99,24 @@ model ProtocolDayUserExercise {
   userExercise   UserExercise @relation(fields: [userExerciseId], references: [id])
   protocolDayId  Int
   protocolDay    ProtocolDay  @relation(fields: [protocolDayId], references: [id])
+}
+
+model WeightRecord {
+  id              Int           @id @default(autoincrement())
+  createdAt       DateTime      @default(now())
+  value           Float
+  smooth          Float
+  weightProgramId Int
+  weightProgram   WeightProgram @relation(fields: [weightProgramId], references: [id])
+}
+
+model WeightProgram {
+  id            Int            @id @default(autoincrement())
+  createdAt     DateTime       @default(now())
+  active        Boolean
+  goalWeight    Float
+  mode          String
+  userId        Int
+  user          User           @relation(fields: [userId], references: [id])
+  weightRecords WeightRecord[]
 }

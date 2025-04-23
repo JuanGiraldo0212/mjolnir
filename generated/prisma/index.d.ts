@@ -53,6 +53,16 @@ export type ExerciseRecord = $Result.DefaultSelection<Prisma.$ExerciseRecordPayl
  * 
  */
 export type ProtocolDayUserExercise = $Result.DefaultSelection<Prisma.$ProtocolDayUserExercisePayload>
+/**
+ * Model WeightRecord
+ * 
+ */
+export type WeightRecord = $Result.DefaultSelection<Prisma.$WeightRecordPayload>
+/**
+ * Model WeightProgram
+ * 
+ */
+export type WeightProgram = $Result.DefaultSelection<Prisma.$WeightProgramPayload>
 
 /**
  * ##  Prisma Client ʲˢ
@@ -258,6 +268,26 @@ export class PrismaClient<
     * ```
     */
   get protocolDayUserExercise(): Prisma.ProtocolDayUserExerciseDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.weightRecord`: Exposes CRUD operations for the **WeightRecord** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more WeightRecords
+    * const weightRecords = await prisma.weightRecord.findMany()
+    * ```
+    */
+  get weightRecord(): Prisma.WeightRecordDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.weightProgram`: Exposes CRUD operations for the **WeightProgram** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more WeightPrograms
+    * const weightPrograms = await prisma.weightProgram.findMany()
+    * ```
+    */
+  get weightProgram(): Prisma.WeightProgramDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -705,7 +735,9 @@ export namespace Prisma {
     ProtocolDay: 'ProtocolDay',
     Workout: 'Workout',
     ExerciseRecord: 'ExerciseRecord',
-    ProtocolDayUserExercise: 'ProtocolDayUserExercise'
+    ProtocolDayUserExercise: 'ProtocolDayUserExercise',
+    WeightRecord: 'WeightRecord',
+    WeightProgram: 'WeightProgram'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -724,7 +756,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "user" | "exercise" | "userExercise" | "protocol" | "protocolDay" | "workout" | "exerciseRecord" | "protocolDayUserExercise"
+      modelProps: "user" | "exercise" | "userExercise" | "protocol" | "protocolDay" | "workout" | "exerciseRecord" | "protocolDayUserExercise" | "weightRecord" | "weightProgram"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -1320,6 +1352,154 @@ export namespace Prisma {
           }
         }
       }
+      WeightRecord: {
+        payload: Prisma.$WeightRecordPayload<ExtArgs>
+        fields: Prisma.WeightRecordFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.WeightRecordFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WeightRecordPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.WeightRecordFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WeightRecordPayload>
+          }
+          findFirst: {
+            args: Prisma.WeightRecordFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WeightRecordPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.WeightRecordFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WeightRecordPayload>
+          }
+          findMany: {
+            args: Prisma.WeightRecordFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WeightRecordPayload>[]
+          }
+          create: {
+            args: Prisma.WeightRecordCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WeightRecordPayload>
+          }
+          createMany: {
+            args: Prisma.WeightRecordCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.WeightRecordCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WeightRecordPayload>[]
+          }
+          delete: {
+            args: Prisma.WeightRecordDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WeightRecordPayload>
+          }
+          update: {
+            args: Prisma.WeightRecordUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WeightRecordPayload>
+          }
+          deleteMany: {
+            args: Prisma.WeightRecordDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.WeightRecordUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.WeightRecordUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WeightRecordPayload>[]
+          }
+          upsert: {
+            args: Prisma.WeightRecordUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WeightRecordPayload>
+          }
+          aggregate: {
+            args: Prisma.WeightRecordAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateWeightRecord>
+          }
+          groupBy: {
+            args: Prisma.WeightRecordGroupByArgs<ExtArgs>
+            result: $Utils.Optional<WeightRecordGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.WeightRecordCountArgs<ExtArgs>
+            result: $Utils.Optional<WeightRecordCountAggregateOutputType> | number
+          }
+        }
+      }
+      WeightProgram: {
+        payload: Prisma.$WeightProgramPayload<ExtArgs>
+        fields: Prisma.WeightProgramFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.WeightProgramFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WeightProgramPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.WeightProgramFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WeightProgramPayload>
+          }
+          findFirst: {
+            args: Prisma.WeightProgramFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WeightProgramPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.WeightProgramFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WeightProgramPayload>
+          }
+          findMany: {
+            args: Prisma.WeightProgramFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WeightProgramPayload>[]
+          }
+          create: {
+            args: Prisma.WeightProgramCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WeightProgramPayload>
+          }
+          createMany: {
+            args: Prisma.WeightProgramCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.WeightProgramCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WeightProgramPayload>[]
+          }
+          delete: {
+            args: Prisma.WeightProgramDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WeightProgramPayload>
+          }
+          update: {
+            args: Prisma.WeightProgramUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WeightProgramPayload>
+          }
+          deleteMany: {
+            args: Prisma.WeightProgramDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.WeightProgramUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.WeightProgramUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WeightProgramPayload>[]
+          }
+          upsert: {
+            args: Prisma.WeightProgramUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WeightProgramPayload>
+          }
+          aggregate: {
+            args: Prisma.WeightProgramAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateWeightProgram>
+          }
+          groupBy: {
+            args: Prisma.WeightProgramGroupByArgs<ExtArgs>
+            result: $Utils.Optional<WeightProgramGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.WeightProgramCountArgs<ExtArgs>
+            result: $Utils.Optional<WeightProgramCountAggregateOutputType> | number
+          }
+        }
+      }
     }
   } & {
     other: {
@@ -1412,6 +1592,8 @@ export namespace Prisma {
     workout?: WorkoutOmit
     exerciseRecord?: ExerciseRecordOmit
     protocolDayUserExercise?: ProtocolDayUserExerciseOmit
+    weightRecord?: WeightRecordOmit
+    weightProgram?: WeightProgramOmit
   }
 
   /* Types for Logging */
@@ -1508,11 +1690,13 @@ export namespace Prisma {
   export type UserCountOutputType = {
     userExcercises: number
     protocols: number
+    weightPrograms: number
   }
 
   export type UserCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     userExcercises?: boolean | UserCountOutputTypeCountUserExcercisesArgs
     protocols?: boolean | UserCountOutputTypeCountProtocolsArgs
+    weightPrograms?: boolean | UserCountOutputTypeCountWeightProgramsArgs
   }
 
   // Custom InputTypes
@@ -1538,6 +1722,13 @@ export namespace Prisma {
    */
   export type UserCountOutputTypeCountProtocolsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: ProtocolWhereInput
+  }
+
+  /**
+   * UserCountOutputType without action
+   */
+  export type UserCountOutputTypeCountWeightProgramsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: WeightProgramWhereInput
   }
 
 
@@ -1711,6 +1902,37 @@ export namespace Prisma {
    */
   export type WorkoutCountOutputTypeCountExerciseRecordsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: ExerciseRecordWhereInput
+  }
+
+
+  /**
+   * Count Type WeightProgramCountOutputType
+   */
+
+  export type WeightProgramCountOutputType = {
+    weightRecords: number
+  }
+
+  export type WeightProgramCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    weightRecords?: boolean | WeightProgramCountOutputTypeCountWeightRecordsArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * WeightProgramCountOutputType without action
+   */
+  export type WeightProgramCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the WeightProgramCountOutputType
+     */
+    select?: WeightProgramCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * WeightProgramCountOutputType without action
+   */
+  export type WeightProgramCountOutputTypeCountWeightRecordsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: WeightRecordWhereInput
   }
 
 
@@ -1974,6 +2196,7 @@ export namespace Prisma {
     exerciseWeightUnit?: boolean
     userExcercises?: boolean | User$userExcercisesArgs<ExtArgs>
     protocols?: boolean | User$protocolsArgs<ExtArgs>
+    weightPrograms?: boolean | User$weightProgramsArgs<ExtArgs>
     _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["user"]>
 
@@ -2023,6 +2246,7 @@ export namespace Prisma {
   export type UserInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     userExcercises?: boolean | User$userExcercisesArgs<ExtArgs>
     protocols?: boolean | User$protocolsArgs<ExtArgs>
+    weightPrograms?: boolean | User$weightProgramsArgs<ExtArgs>
     _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type UserIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
@@ -2033,6 +2257,7 @@ export namespace Prisma {
     objects: {
       userExcercises: Prisma.$UserExercisePayload<ExtArgs>[]
       protocols: Prisma.$ProtocolPayload<ExtArgs>[]
+      weightPrograms: Prisma.$WeightProgramPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
@@ -2442,6 +2667,7 @@ export namespace Prisma {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     userExcercises<T extends User$userExcercisesArgs<ExtArgs> = {}>(args?: Subset<T, User$userExcercisesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$UserExercisePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     protocols<T extends User$protocolsArgs<ExtArgs> = {}>(args?: Subset<T, User$protocolsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProtocolPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    weightPrograms<T extends User$weightProgramsArgs<ExtArgs> = {}>(args?: Subset<T, User$weightProgramsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$WeightProgramPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2913,6 +3139,30 @@ export namespace Prisma {
     take?: number
     skip?: number
     distinct?: ProtocolScalarFieldEnum | ProtocolScalarFieldEnum[]
+  }
+
+  /**
+   * User.weightPrograms
+   */
+  export type User$weightProgramsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the WeightProgram
+     */
+    select?: WeightProgramSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the WeightProgram
+     */
+    omit?: WeightProgramOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: WeightProgramInclude<ExtArgs> | null
+    where?: WeightProgramWhereInput
+    orderBy?: WeightProgramOrderByWithRelationInput | WeightProgramOrderByWithRelationInput[]
+    cursor?: WeightProgramWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: WeightProgramScalarFieldEnum | WeightProgramScalarFieldEnum[]
   }
 
   /**
@@ -10854,6 +11104,2249 @@ export namespace Prisma {
 
 
   /**
+   * Model WeightRecord
+   */
+
+  export type AggregateWeightRecord = {
+    _count: WeightRecordCountAggregateOutputType | null
+    _avg: WeightRecordAvgAggregateOutputType | null
+    _sum: WeightRecordSumAggregateOutputType | null
+    _min: WeightRecordMinAggregateOutputType | null
+    _max: WeightRecordMaxAggregateOutputType | null
+  }
+
+  export type WeightRecordAvgAggregateOutputType = {
+    id: number | null
+    value: number | null
+    smooth: number | null
+    weightProgramId: number | null
+  }
+
+  export type WeightRecordSumAggregateOutputType = {
+    id: number | null
+    value: number | null
+    smooth: number | null
+    weightProgramId: number | null
+  }
+
+  export type WeightRecordMinAggregateOutputType = {
+    id: number | null
+    createdAt: Date | null
+    value: number | null
+    smooth: number | null
+    weightProgramId: number | null
+  }
+
+  export type WeightRecordMaxAggregateOutputType = {
+    id: number | null
+    createdAt: Date | null
+    value: number | null
+    smooth: number | null
+    weightProgramId: number | null
+  }
+
+  export type WeightRecordCountAggregateOutputType = {
+    id: number
+    createdAt: number
+    value: number
+    smooth: number
+    weightProgramId: number
+    _all: number
+  }
+
+
+  export type WeightRecordAvgAggregateInputType = {
+    id?: true
+    value?: true
+    smooth?: true
+    weightProgramId?: true
+  }
+
+  export type WeightRecordSumAggregateInputType = {
+    id?: true
+    value?: true
+    smooth?: true
+    weightProgramId?: true
+  }
+
+  export type WeightRecordMinAggregateInputType = {
+    id?: true
+    createdAt?: true
+    value?: true
+    smooth?: true
+    weightProgramId?: true
+  }
+
+  export type WeightRecordMaxAggregateInputType = {
+    id?: true
+    createdAt?: true
+    value?: true
+    smooth?: true
+    weightProgramId?: true
+  }
+
+  export type WeightRecordCountAggregateInputType = {
+    id?: true
+    createdAt?: true
+    value?: true
+    smooth?: true
+    weightProgramId?: true
+    _all?: true
+  }
+
+  export type WeightRecordAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which WeightRecord to aggregate.
+     */
+    where?: WeightRecordWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of WeightRecords to fetch.
+     */
+    orderBy?: WeightRecordOrderByWithRelationInput | WeightRecordOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: WeightRecordWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` WeightRecords from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` WeightRecords.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned WeightRecords
+    **/
+    _count?: true | WeightRecordCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: WeightRecordAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: WeightRecordSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: WeightRecordMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: WeightRecordMaxAggregateInputType
+  }
+
+  export type GetWeightRecordAggregateType<T extends WeightRecordAggregateArgs> = {
+        [P in keyof T & keyof AggregateWeightRecord]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateWeightRecord[P]>
+      : GetScalarType<T[P], AggregateWeightRecord[P]>
+  }
+
+
+
+
+  export type WeightRecordGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: WeightRecordWhereInput
+    orderBy?: WeightRecordOrderByWithAggregationInput | WeightRecordOrderByWithAggregationInput[]
+    by: WeightRecordScalarFieldEnum[] | WeightRecordScalarFieldEnum
+    having?: WeightRecordScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: WeightRecordCountAggregateInputType | true
+    _avg?: WeightRecordAvgAggregateInputType
+    _sum?: WeightRecordSumAggregateInputType
+    _min?: WeightRecordMinAggregateInputType
+    _max?: WeightRecordMaxAggregateInputType
+  }
+
+  export type WeightRecordGroupByOutputType = {
+    id: number
+    createdAt: Date
+    value: number
+    smooth: number
+    weightProgramId: number
+    _count: WeightRecordCountAggregateOutputType | null
+    _avg: WeightRecordAvgAggregateOutputType | null
+    _sum: WeightRecordSumAggregateOutputType | null
+    _min: WeightRecordMinAggregateOutputType | null
+    _max: WeightRecordMaxAggregateOutputType | null
+  }
+
+  type GetWeightRecordGroupByPayload<T extends WeightRecordGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<WeightRecordGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof WeightRecordGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], WeightRecordGroupByOutputType[P]>
+            : GetScalarType<T[P], WeightRecordGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type WeightRecordSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    createdAt?: boolean
+    value?: boolean
+    smooth?: boolean
+    weightProgramId?: boolean
+    weightProgram?: boolean | WeightProgramDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["weightRecord"]>
+
+  export type WeightRecordSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    createdAt?: boolean
+    value?: boolean
+    smooth?: boolean
+    weightProgramId?: boolean
+    weightProgram?: boolean | WeightProgramDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["weightRecord"]>
+
+  export type WeightRecordSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    createdAt?: boolean
+    value?: boolean
+    smooth?: boolean
+    weightProgramId?: boolean
+    weightProgram?: boolean | WeightProgramDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["weightRecord"]>
+
+  export type WeightRecordSelectScalar = {
+    id?: boolean
+    createdAt?: boolean
+    value?: boolean
+    smooth?: boolean
+    weightProgramId?: boolean
+  }
+
+  export type WeightRecordOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "createdAt" | "value" | "smooth" | "weightProgramId", ExtArgs["result"]["weightRecord"]>
+  export type WeightRecordInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    weightProgram?: boolean | WeightProgramDefaultArgs<ExtArgs>
+  }
+  export type WeightRecordIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    weightProgram?: boolean | WeightProgramDefaultArgs<ExtArgs>
+  }
+  export type WeightRecordIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    weightProgram?: boolean | WeightProgramDefaultArgs<ExtArgs>
+  }
+
+  export type $WeightRecordPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "WeightRecord"
+    objects: {
+      weightProgram: Prisma.$WeightProgramPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      createdAt: Date
+      value: number
+      smooth: number
+      weightProgramId: number
+    }, ExtArgs["result"]["weightRecord"]>
+    composites: {}
+  }
+
+  type WeightRecordGetPayload<S extends boolean | null | undefined | WeightRecordDefaultArgs> = $Result.GetResult<Prisma.$WeightRecordPayload, S>
+
+  type WeightRecordCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<WeightRecordFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: WeightRecordCountAggregateInputType | true
+    }
+
+  export interface WeightRecordDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['WeightRecord'], meta: { name: 'WeightRecord' } }
+    /**
+     * Find zero or one WeightRecord that matches the filter.
+     * @param {WeightRecordFindUniqueArgs} args - Arguments to find a WeightRecord
+     * @example
+     * // Get one WeightRecord
+     * const weightRecord = await prisma.weightRecord.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends WeightRecordFindUniqueArgs>(args: SelectSubset<T, WeightRecordFindUniqueArgs<ExtArgs>>): Prisma__WeightRecordClient<$Result.GetResult<Prisma.$WeightRecordPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one WeightRecord that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {WeightRecordFindUniqueOrThrowArgs} args - Arguments to find a WeightRecord
+     * @example
+     * // Get one WeightRecord
+     * const weightRecord = await prisma.weightRecord.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends WeightRecordFindUniqueOrThrowArgs>(args: SelectSubset<T, WeightRecordFindUniqueOrThrowArgs<ExtArgs>>): Prisma__WeightRecordClient<$Result.GetResult<Prisma.$WeightRecordPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first WeightRecord that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {WeightRecordFindFirstArgs} args - Arguments to find a WeightRecord
+     * @example
+     * // Get one WeightRecord
+     * const weightRecord = await prisma.weightRecord.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends WeightRecordFindFirstArgs>(args?: SelectSubset<T, WeightRecordFindFirstArgs<ExtArgs>>): Prisma__WeightRecordClient<$Result.GetResult<Prisma.$WeightRecordPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first WeightRecord that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {WeightRecordFindFirstOrThrowArgs} args - Arguments to find a WeightRecord
+     * @example
+     * // Get one WeightRecord
+     * const weightRecord = await prisma.weightRecord.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends WeightRecordFindFirstOrThrowArgs>(args?: SelectSubset<T, WeightRecordFindFirstOrThrowArgs<ExtArgs>>): Prisma__WeightRecordClient<$Result.GetResult<Prisma.$WeightRecordPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more WeightRecords that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {WeightRecordFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all WeightRecords
+     * const weightRecords = await prisma.weightRecord.findMany()
+     * 
+     * // Get first 10 WeightRecords
+     * const weightRecords = await prisma.weightRecord.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const weightRecordWithIdOnly = await prisma.weightRecord.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends WeightRecordFindManyArgs>(args?: SelectSubset<T, WeightRecordFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$WeightRecordPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a WeightRecord.
+     * @param {WeightRecordCreateArgs} args - Arguments to create a WeightRecord.
+     * @example
+     * // Create one WeightRecord
+     * const WeightRecord = await prisma.weightRecord.create({
+     *   data: {
+     *     // ... data to create a WeightRecord
+     *   }
+     * })
+     * 
+     */
+    create<T extends WeightRecordCreateArgs>(args: SelectSubset<T, WeightRecordCreateArgs<ExtArgs>>): Prisma__WeightRecordClient<$Result.GetResult<Prisma.$WeightRecordPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many WeightRecords.
+     * @param {WeightRecordCreateManyArgs} args - Arguments to create many WeightRecords.
+     * @example
+     * // Create many WeightRecords
+     * const weightRecord = await prisma.weightRecord.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends WeightRecordCreateManyArgs>(args?: SelectSubset<T, WeightRecordCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many WeightRecords and returns the data saved in the database.
+     * @param {WeightRecordCreateManyAndReturnArgs} args - Arguments to create many WeightRecords.
+     * @example
+     * // Create many WeightRecords
+     * const weightRecord = await prisma.weightRecord.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many WeightRecords and only return the `id`
+     * const weightRecordWithIdOnly = await prisma.weightRecord.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends WeightRecordCreateManyAndReturnArgs>(args?: SelectSubset<T, WeightRecordCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$WeightRecordPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a WeightRecord.
+     * @param {WeightRecordDeleteArgs} args - Arguments to delete one WeightRecord.
+     * @example
+     * // Delete one WeightRecord
+     * const WeightRecord = await prisma.weightRecord.delete({
+     *   where: {
+     *     // ... filter to delete one WeightRecord
+     *   }
+     * })
+     * 
+     */
+    delete<T extends WeightRecordDeleteArgs>(args: SelectSubset<T, WeightRecordDeleteArgs<ExtArgs>>): Prisma__WeightRecordClient<$Result.GetResult<Prisma.$WeightRecordPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one WeightRecord.
+     * @param {WeightRecordUpdateArgs} args - Arguments to update one WeightRecord.
+     * @example
+     * // Update one WeightRecord
+     * const weightRecord = await prisma.weightRecord.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends WeightRecordUpdateArgs>(args: SelectSubset<T, WeightRecordUpdateArgs<ExtArgs>>): Prisma__WeightRecordClient<$Result.GetResult<Prisma.$WeightRecordPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more WeightRecords.
+     * @param {WeightRecordDeleteManyArgs} args - Arguments to filter WeightRecords to delete.
+     * @example
+     * // Delete a few WeightRecords
+     * const { count } = await prisma.weightRecord.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends WeightRecordDeleteManyArgs>(args?: SelectSubset<T, WeightRecordDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more WeightRecords.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {WeightRecordUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many WeightRecords
+     * const weightRecord = await prisma.weightRecord.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends WeightRecordUpdateManyArgs>(args: SelectSubset<T, WeightRecordUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more WeightRecords and returns the data updated in the database.
+     * @param {WeightRecordUpdateManyAndReturnArgs} args - Arguments to update many WeightRecords.
+     * @example
+     * // Update many WeightRecords
+     * const weightRecord = await prisma.weightRecord.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more WeightRecords and only return the `id`
+     * const weightRecordWithIdOnly = await prisma.weightRecord.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends WeightRecordUpdateManyAndReturnArgs>(args: SelectSubset<T, WeightRecordUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$WeightRecordPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one WeightRecord.
+     * @param {WeightRecordUpsertArgs} args - Arguments to update or create a WeightRecord.
+     * @example
+     * // Update or create a WeightRecord
+     * const weightRecord = await prisma.weightRecord.upsert({
+     *   create: {
+     *     // ... data to create a WeightRecord
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the WeightRecord we want to update
+     *   }
+     * })
+     */
+    upsert<T extends WeightRecordUpsertArgs>(args: SelectSubset<T, WeightRecordUpsertArgs<ExtArgs>>): Prisma__WeightRecordClient<$Result.GetResult<Prisma.$WeightRecordPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of WeightRecords.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {WeightRecordCountArgs} args - Arguments to filter WeightRecords to count.
+     * @example
+     * // Count the number of WeightRecords
+     * const count = await prisma.weightRecord.count({
+     *   where: {
+     *     // ... the filter for the WeightRecords we want to count
+     *   }
+     * })
+    **/
+    count<T extends WeightRecordCountArgs>(
+      args?: Subset<T, WeightRecordCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], WeightRecordCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a WeightRecord.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {WeightRecordAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends WeightRecordAggregateArgs>(args: Subset<T, WeightRecordAggregateArgs>): Prisma.PrismaPromise<GetWeightRecordAggregateType<T>>
+
+    /**
+     * Group by WeightRecord.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {WeightRecordGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends WeightRecordGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: WeightRecordGroupByArgs['orderBy'] }
+        : { orderBy?: WeightRecordGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, WeightRecordGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetWeightRecordGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the WeightRecord model
+   */
+  readonly fields: WeightRecordFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for WeightRecord.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__WeightRecordClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    weightProgram<T extends WeightProgramDefaultArgs<ExtArgs> = {}>(args?: Subset<T, WeightProgramDefaultArgs<ExtArgs>>): Prisma__WeightProgramClient<$Result.GetResult<Prisma.$WeightProgramPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the WeightRecord model
+   */
+  interface WeightRecordFieldRefs {
+    readonly id: FieldRef<"WeightRecord", 'Int'>
+    readonly createdAt: FieldRef<"WeightRecord", 'DateTime'>
+    readonly value: FieldRef<"WeightRecord", 'Float'>
+    readonly smooth: FieldRef<"WeightRecord", 'Float'>
+    readonly weightProgramId: FieldRef<"WeightRecord", 'Int'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * WeightRecord findUnique
+   */
+  export type WeightRecordFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the WeightRecord
+     */
+    select?: WeightRecordSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the WeightRecord
+     */
+    omit?: WeightRecordOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: WeightRecordInclude<ExtArgs> | null
+    /**
+     * Filter, which WeightRecord to fetch.
+     */
+    where: WeightRecordWhereUniqueInput
+  }
+
+  /**
+   * WeightRecord findUniqueOrThrow
+   */
+  export type WeightRecordFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the WeightRecord
+     */
+    select?: WeightRecordSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the WeightRecord
+     */
+    omit?: WeightRecordOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: WeightRecordInclude<ExtArgs> | null
+    /**
+     * Filter, which WeightRecord to fetch.
+     */
+    where: WeightRecordWhereUniqueInput
+  }
+
+  /**
+   * WeightRecord findFirst
+   */
+  export type WeightRecordFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the WeightRecord
+     */
+    select?: WeightRecordSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the WeightRecord
+     */
+    omit?: WeightRecordOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: WeightRecordInclude<ExtArgs> | null
+    /**
+     * Filter, which WeightRecord to fetch.
+     */
+    where?: WeightRecordWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of WeightRecords to fetch.
+     */
+    orderBy?: WeightRecordOrderByWithRelationInput | WeightRecordOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for WeightRecords.
+     */
+    cursor?: WeightRecordWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` WeightRecords from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` WeightRecords.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of WeightRecords.
+     */
+    distinct?: WeightRecordScalarFieldEnum | WeightRecordScalarFieldEnum[]
+  }
+
+  /**
+   * WeightRecord findFirstOrThrow
+   */
+  export type WeightRecordFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the WeightRecord
+     */
+    select?: WeightRecordSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the WeightRecord
+     */
+    omit?: WeightRecordOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: WeightRecordInclude<ExtArgs> | null
+    /**
+     * Filter, which WeightRecord to fetch.
+     */
+    where?: WeightRecordWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of WeightRecords to fetch.
+     */
+    orderBy?: WeightRecordOrderByWithRelationInput | WeightRecordOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for WeightRecords.
+     */
+    cursor?: WeightRecordWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` WeightRecords from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` WeightRecords.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of WeightRecords.
+     */
+    distinct?: WeightRecordScalarFieldEnum | WeightRecordScalarFieldEnum[]
+  }
+
+  /**
+   * WeightRecord findMany
+   */
+  export type WeightRecordFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the WeightRecord
+     */
+    select?: WeightRecordSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the WeightRecord
+     */
+    omit?: WeightRecordOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: WeightRecordInclude<ExtArgs> | null
+    /**
+     * Filter, which WeightRecords to fetch.
+     */
+    where?: WeightRecordWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of WeightRecords to fetch.
+     */
+    orderBy?: WeightRecordOrderByWithRelationInput | WeightRecordOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing WeightRecords.
+     */
+    cursor?: WeightRecordWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` WeightRecords from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` WeightRecords.
+     */
+    skip?: number
+    distinct?: WeightRecordScalarFieldEnum | WeightRecordScalarFieldEnum[]
+  }
+
+  /**
+   * WeightRecord create
+   */
+  export type WeightRecordCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the WeightRecord
+     */
+    select?: WeightRecordSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the WeightRecord
+     */
+    omit?: WeightRecordOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: WeightRecordInclude<ExtArgs> | null
+    /**
+     * The data needed to create a WeightRecord.
+     */
+    data: XOR<WeightRecordCreateInput, WeightRecordUncheckedCreateInput>
+  }
+
+  /**
+   * WeightRecord createMany
+   */
+  export type WeightRecordCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many WeightRecords.
+     */
+    data: WeightRecordCreateManyInput | WeightRecordCreateManyInput[]
+  }
+
+  /**
+   * WeightRecord createManyAndReturn
+   */
+  export type WeightRecordCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the WeightRecord
+     */
+    select?: WeightRecordSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the WeightRecord
+     */
+    omit?: WeightRecordOmit<ExtArgs> | null
+    /**
+     * The data used to create many WeightRecords.
+     */
+    data: WeightRecordCreateManyInput | WeightRecordCreateManyInput[]
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: WeightRecordIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * WeightRecord update
+   */
+  export type WeightRecordUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the WeightRecord
+     */
+    select?: WeightRecordSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the WeightRecord
+     */
+    omit?: WeightRecordOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: WeightRecordInclude<ExtArgs> | null
+    /**
+     * The data needed to update a WeightRecord.
+     */
+    data: XOR<WeightRecordUpdateInput, WeightRecordUncheckedUpdateInput>
+    /**
+     * Choose, which WeightRecord to update.
+     */
+    where: WeightRecordWhereUniqueInput
+  }
+
+  /**
+   * WeightRecord updateMany
+   */
+  export type WeightRecordUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update WeightRecords.
+     */
+    data: XOR<WeightRecordUpdateManyMutationInput, WeightRecordUncheckedUpdateManyInput>
+    /**
+     * Filter which WeightRecords to update
+     */
+    where?: WeightRecordWhereInput
+    /**
+     * Limit how many WeightRecords to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * WeightRecord updateManyAndReturn
+   */
+  export type WeightRecordUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the WeightRecord
+     */
+    select?: WeightRecordSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the WeightRecord
+     */
+    omit?: WeightRecordOmit<ExtArgs> | null
+    /**
+     * The data used to update WeightRecords.
+     */
+    data: XOR<WeightRecordUpdateManyMutationInput, WeightRecordUncheckedUpdateManyInput>
+    /**
+     * Filter which WeightRecords to update
+     */
+    where?: WeightRecordWhereInput
+    /**
+     * Limit how many WeightRecords to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: WeightRecordIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * WeightRecord upsert
+   */
+  export type WeightRecordUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the WeightRecord
+     */
+    select?: WeightRecordSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the WeightRecord
+     */
+    omit?: WeightRecordOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: WeightRecordInclude<ExtArgs> | null
+    /**
+     * The filter to search for the WeightRecord to update in case it exists.
+     */
+    where: WeightRecordWhereUniqueInput
+    /**
+     * In case the WeightRecord found by the `where` argument doesn't exist, create a new WeightRecord with this data.
+     */
+    create: XOR<WeightRecordCreateInput, WeightRecordUncheckedCreateInput>
+    /**
+     * In case the WeightRecord was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<WeightRecordUpdateInput, WeightRecordUncheckedUpdateInput>
+  }
+
+  /**
+   * WeightRecord delete
+   */
+  export type WeightRecordDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the WeightRecord
+     */
+    select?: WeightRecordSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the WeightRecord
+     */
+    omit?: WeightRecordOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: WeightRecordInclude<ExtArgs> | null
+    /**
+     * Filter which WeightRecord to delete.
+     */
+    where: WeightRecordWhereUniqueInput
+  }
+
+  /**
+   * WeightRecord deleteMany
+   */
+  export type WeightRecordDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which WeightRecords to delete
+     */
+    where?: WeightRecordWhereInput
+    /**
+     * Limit how many WeightRecords to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * WeightRecord without action
+   */
+  export type WeightRecordDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the WeightRecord
+     */
+    select?: WeightRecordSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the WeightRecord
+     */
+    omit?: WeightRecordOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: WeightRecordInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model WeightProgram
+   */
+
+  export type AggregateWeightProgram = {
+    _count: WeightProgramCountAggregateOutputType | null
+    _avg: WeightProgramAvgAggregateOutputType | null
+    _sum: WeightProgramSumAggregateOutputType | null
+    _min: WeightProgramMinAggregateOutputType | null
+    _max: WeightProgramMaxAggregateOutputType | null
+  }
+
+  export type WeightProgramAvgAggregateOutputType = {
+    id: number | null
+    goalWeight: number | null
+    userId: number | null
+  }
+
+  export type WeightProgramSumAggregateOutputType = {
+    id: number | null
+    goalWeight: number | null
+    userId: number | null
+  }
+
+  export type WeightProgramMinAggregateOutputType = {
+    id: number | null
+    createdAt: Date | null
+    active: boolean | null
+    goalWeight: number | null
+    mode: string | null
+    userId: number | null
+  }
+
+  export type WeightProgramMaxAggregateOutputType = {
+    id: number | null
+    createdAt: Date | null
+    active: boolean | null
+    goalWeight: number | null
+    mode: string | null
+    userId: number | null
+  }
+
+  export type WeightProgramCountAggregateOutputType = {
+    id: number
+    createdAt: number
+    active: number
+    goalWeight: number
+    mode: number
+    userId: number
+    _all: number
+  }
+
+
+  export type WeightProgramAvgAggregateInputType = {
+    id?: true
+    goalWeight?: true
+    userId?: true
+  }
+
+  export type WeightProgramSumAggregateInputType = {
+    id?: true
+    goalWeight?: true
+    userId?: true
+  }
+
+  export type WeightProgramMinAggregateInputType = {
+    id?: true
+    createdAt?: true
+    active?: true
+    goalWeight?: true
+    mode?: true
+    userId?: true
+  }
+
+  export type WeightProgramMaxAggregateInputType = {
+    id?: true
+    createdAt?: true
+    active?: true
+    goalWeight?: true
+    mode?: true
+    userId?: true
+  }
+
+  export type WeightProgramCountAggregateInputType = {
+    id?: true
+    createdAt?: true
+    active?: true
+    goalWeight?: true
+    mode?: true
+    userId?: true
+    _all?: true
+  }
+
+  export type WeightProgramAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which WeightProgram to aggregate.
+     */
+    where?: WeightProgramWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of WeightPrograms to fetch.
+     */
+    orderBy?: WeightProgramOrderByWithRelationInput | WeightProgramOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: WeightProgramWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` WeightPrograms from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` WeightPrograms.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned WeightPrograms
+    **/
+    _count?: true | WeightProgramCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: WeightProgramAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: WeightProgramSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: WeightProgramMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: WeightProgramMaxAggregateInputType
+  }
+
+  export type GetWeightProgramAggregateType<T extends WeightProgramAggregateArgs> = {
+        [P in keyof T & keyof AggregateWeightProgram]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateWeightProgram[P]>
+      : GetScalarType<T[P], AggregateWeightProgram[P]>
+  }
+
+
+
+
+  export type WeightProgramGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: WeightProgramWhereInput
+    orderBy?: WeightProgramOrderByWithAggregationInput | WeightProgramOrderByWithAggregationInput[]
+    by: WeightProgramScalarFieldEnum[] | WeightProgramScalarFieldEnum
+    having?: WeightProgramScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: WeightProgramCountAggregateInputType | true
+    _avg?: WeightProgramAvgAggregateInputType
+    _sum?: WeightProgramSumAggregateInputType
+    _min?: WeightProgramMinAggregateInputType
+    _max?: WeightProgramMaxAggregateInputType
+  }
+
+  export type WeightProgramGroupByOutputType = {
+    id: number
+    createdAt: Date
+    active: boolean
+    goalWeight: number
+    mode: string
+    userId: number
+    _count: WeightProgramCountAggregateOutputType | null
+    _avg: WeightProgramAvgAggregateOutputType | null
+    _sum: WeightProgramSumAggregateOutputType | null
+    _min: WeightProgramMinAggregateOutputType | null
+    _max: WeightProgramMaxAggregateOutputType | null
+  }
+
+  type GetWeightProgramGroupByPayload<T extends WeightProgramGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<WeightProgramGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof WeightProgramGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], WeightProgramGroupByOutputType[P]>
+            : GetScalarType<T[P], WeightProgramGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type WeightProgramSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    createdAt?: boolean
+    active?: boolean
+    goalWeight?: boolean
+    mode?: boolean
+    userId?: boolean
+    user?: boolean | UserDefaultArgs<ExtArgs>
+    weightRecords?: boolean | WeightProgram$weightRecordsArgs<ExtArgs>
+    _count?: boolean | WeightProgramCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["weightProgram"]>
+
+  export type WeightProgramSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    createdAt?: boolean
+    active?: boolean
+    goalWeight?: boolean
+    mode?: boolean
+    userId?: boolean
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["weightProgram"]>
+
+  export type WeightProgramSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    createdAt?: boolean
+    active?: boolean
+    goalWeight?: boolean
+    mode?: boolean
+    userId?: boolean
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["weightProgram"]>
+
+  export type WeightProgramSelectScalar = {
+    id?: boolean
+    createdAt?: boolean
+    active?: boolean
+    goalWeight?: boolean
+    mode?: boolean
+    userId?: boolean
+  }
+
+  export type WeightProgramOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "createdAt" | "active" | "goalWeight" | "mode" | "userId", ExtArgs["result"]["weightProgram"]>
+  export type WeightProgramInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    user?: boolean | UserDefaultArgs<ExtArgs>
+    weightRecords?: boolean | WeightProgram$weightRecordsArgs<ExtArgs>
+    _count?: boolean | WeightProgramCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type WeightProgramIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }
+  export type WeightProgramIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }
+
+  export type $WeightProgramPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "WeightProgram"
+    objects: {
+      user: Prisma.$UserPayload<ExtArgs>
+      weightRecords: Prisma.$WeightRecordPayload<ExtArgs>[]
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      createdAt: Date
+      active: boolean
+      goalWeight: number
+      mode: string
+      userId: number
+    }, ExtArgs["result"]["weightProgram"]>
+    composites: {}
+  }
+
+  type WeightProgramGetPayload<S extends boolean | null | undefined | WeightProgramDefaultArgs> = $Result.GetResult<Prisma.$WeightProgramPayload, S>
+
+  type WeightProgramCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<WeightProgramFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: WeightProgramCountAggregateInputType | true
+    }
+
+  export interface WeightProgramDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['WeightProgram'], meta: { name: 'WeightProgram' } }
+    /**
+     * Find zero or one WeightProgram that matches the filter.
+     * @param {WeightProgramFindUniqueArgs} args - Arguments to find a WeightProgram
+     * @example
+     * // Get one WeightProgram
+     * const weightProgram = await prisma.weightProgram.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends WeightProgramFindUniqueArgs>(args: SelectSubset<T, WeightProgramFindUniqueArgs<ExtArgs>>): Prisma__WeightProgramClient<$Result.GetResult<Prisma.$WeightProgramPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one WeightProgram that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {WeightProgramFindUniqueOrThrowArgs} args - Arguments to find a WeightProgram
+     * @example
+     * // Get one WeightProgram
+     * const weightProgram = await prisma.weightProgram.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends WeightProgramFindUniqueOrThrowArgs>(args: SelectSubset<T, WeightProgramFindUniqueOrThrowArgs<ExtArgs>>): Prisma__WeightProgramClient<$Result.GetResult<Prisma.$WeightProgramPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first WeightProgram that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {WeightProgramFindFirstArgs} args - Arguments to find a WeightProgram
+     * @example
+     * // Get one WeightProgram
+     * const weightProgram = await prisma.weightProgram.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends WeightProgramFindFirstArgs>(args?: SelectSubset<T, WeightProgramFindFirstArgs<ExtArgs>>): Prisma__WeightProgramClient<$Result.GetResult<Prisma.$WeightProgramPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first WeightProgram that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {WeightProgramFindFirstOrThrowArgs} args - Arguments to find a WeightProgram
+     * @example
+     * // Get one WeightProgram
+     * const weightProgram = await prisma.weightProgram.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends WeightProgramFindFirstOrThrowArgs>(args?: SelectSubset<T, WeightProgramFindFirstOrThrowArgs<ExtArgs>>): Prisma__WeightProgramClient<$Result.GetResult<Prisma.$WeightProgramPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more WeightPrograms that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {WeightProgramFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all WeightPrograms
+     * const weightPrograms = await prisma.weightProgram.findMany()
+     * 
+     * // Get first 10 WeightPrograms
+     * const weightPrograms = await prisma.weightProgram.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const weightProgramWithIdOnly = await prisma.weightProgram.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends WeightProgramFindManyArgs>(args?: SelectSubset<T, WeightProgramFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$WeightProgramPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a WeightProgram.
+     * @param {WeightProgramCreateArgs} args - Arguments to create a WeightProgram.
+     * @example
+     * // Create one WeightProgram
+     * const WeightProgram = await prisma.weightProgram.create({
+     *   data: {
+     *     // ... data to create a WeightProgram
+     *   }
+     * })
+     * 
+     */
+    create<T extends WeightProgramCreateArgs>(args: SelectSubset<T, WeightProgramCreateArgs<ExtArgs>>): Prisma__WeightProgramClient<$Result.GetResult<Prisma.$WeightProgramPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many WeightPrograms.
+     * @param {WeightProgramCreateManyArgs} args - Arguments to create many WeightPrograms.
+     * @example
+     * // Create many WeightPrograms
+     * const weightProgram = await prisma.weightProgram.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends WeightProgramCreateManyArgs>(args?: SelectSubset<T, WeightProgramCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many WeightPrograms and returns the data saved in the database.
+     * @param {WeightProgramCreateManyAndReturnArgs} args - Arguments to create many WeightPrograms.
+     * @example
+     * // Create many WeightPrograms
+     * const weightProgram = await prisma.weightProgram.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many WeightPrograms and only return the `id`
+     * const weightProgramWithIdOnly = await prisma.weightProgram.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends WeightProgramCreateManyAndReturnArgs>(args?: SelectSubset<T, WeightProgramCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$WeightProgramPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a WeightProgram.
+     * @param {WeightProgramDeleteArgs} args - Arguments to delete one WeightProgram.
+     * @example
+     * // Delete one WeightProgram
+     * const WeightProgram = await prisma.weightProgram.delete({
+     *   where: {
+     *     // ... filter to delete one WeightProgram
+     *   }
+     * })
+     * 
+     */
+    delete<T extends WeightProgramDeleteArgs>(args: SelectSubset<T, WeightProgramDeleteArgs<ExtArgs>>): Prisma__WeightProgramClient<$Result.GetResult<Prisma.$WeightProgramPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one WeightProgram.
+     * @param {WeightProgramUpdateArgs} args - Arguments to update one WeightProgram.
+     * @example
+     * // Update one WeightProgram
+     * const weightProgram = await prisma.weightProgram.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends WeightProgramUpdateArgs>(args: SelectSubset<T, WeightProgramUpdateArgs<ExtArgs>>): Prisma__WeightProgramClient<$Result.GetResult<Prisma.$WeightProgramPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more WeightPrograms.
+     * @param {WeightProgramDeleteManyArgs} args - Arguments to filter WeightPrograms to delete.
+     * @example
+     * // Delete a few WeightPrograms
+     * const { count } = await prisma.weightProgram.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends WeightProgramDeleteManyArgs>(args?: SelectSubset<T, WeightProgramDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more WeightPrograms.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {WeightProgramUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many WeightPrograms
+     * const weightProgram = await prisma.weightProgram.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends WeightProgramUpdateManyArgs>(args: SelectSubset<T, WeightProgramUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more WeightPrograms and returns the data updated in the database.
+     * @param {WeightProgramUpdateManyAndReturnArgs} args - Arguments to update many WeightPrograms.
+     * @example
+     * // Update many WeightPrograms
+     * const weightProgram = await prisma.weightProgram.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more WeightPrograms and only return the `id`
+     * const weightProgramWithIdOnly = await prisma.weightProgram.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends WeightProgramUpdateManyAndReturnArgs>(args: SelectSubset<T, WeightProgramUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$WeightProgramPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one WeightProgram.
+     * @param {WeightProgramUpsertArgs} args - Arguments to update or create a WeightProgram.
+     * @example
+     * // Update or create a WeightProgram
+     * const weightProgram = await prisma.weightProgram.upsert({
+     *   create: {
+     *     // ... data to create a WeightProgram
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the WeightProgram we want to update
+     *   }
+     * })
+     */
+    upsert<T extends WeightProgramUpsertArgs>(args: SelectSubset<T, WeightProgramUpsertArgs<ExtArgs>>): Prisma__WeightProgramClient<$Result.GetResult<Prisma.$WeightProgramPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of WeightPrograms.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {WeightProgramCountArgs} args - Arguments to filter WeightPrograms to count.
+     * @example
+     * // Count the number of WeightPrograms
+     * const count = await prisma.weightProgram.count({
+     *   where: {
+     *     // ... the filter for the WeightPrograms we want to count
+     *   }
+     * })
+    **/
+    count<T extends WeightProgramCountArgs>(
+      args?: Subset<T, WeightProgramCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], WeightProgramCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a WeightProgram.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {WeightProgramAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends WeightProgramAggregateArgs>(args: Subset<T, WeightProgramAggregateArgs>): Prisma.PrismaPromise<GetWeightProgramAggregateType<T>>
+
+    /**
+     * Group by WeightProgram.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {WeightProgramGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends WeightProgramGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: WeightProgramGroupByArgs['orderBy'] }
+        : { orderBy?: WeightProgramGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, WeightProgramGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetWeightProgramGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the WeightProgram model
+   */
+  readonly fields: WeightProgramFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for WeightProgram.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__WeightProgramClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    user<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    weightRecords<T extends WeightProgram$weightRecordsArgs<ExtArgs> = {}>(args?: Subset<T, WeightProgram$weightRecordsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$WeightRecordPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the WeightProgram model
+   */
+  interface WeightProgramFieldRefs {
+    readonly id: FieldRef<"WeightProgram", 'Int'>
+    readonly createdAt: FieldRef<"WeightProgram", 'DateTime'>
+    readonly active: FieldRef<"WeightProgram", 'Boolean'>
+    readonly goalWeight: FieldRef<"WeightProgram", 'Float'>
+    readonly mode: FieldRef<"WeightProgram", 'String'>
+    readonly userId: FieldRef<"WeightProgram", 'Int'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * WeightProgram findUnique
+   */
+  export type WeightProgramFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the WeightProgram
+     */
+    select?: WeightProgramSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the WeightProgram
+     */
+    omit?: WeightProgramOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: WeightProgramInclude<ExtArgs> | null
+    /**
+     * Filter, which WeightProgram to fetch.
+     */
+    where: WeightProgramWhereUniqueInput
+  }
+
+  /**
+   * WeightProgram findUniqueOrThrow
+   */
+  export type WeightProgramFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the WeightProgram
+     */
+    select?: WeightProgramSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the WeightProgram
+     */
+    omit?: WeightProgramOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: WeightProgramInclude<ExtArgs> | null
+    /**
+     * Filter, which WeightProgram to fetch.
+     */
+    where: WeightProgramWhereUniqueInput
+  }
+
+  /**
+   * WeightProgram findFirst
+   */
+  export type WeightProgramFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the WeightProgram
+     */
+    select?: WeightProgramSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the WeightProgram
+     */
+    omit?: WeightProgramOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: WeightProgramInclude<ExtArgs> | null
+    /**
+     * Filter, which WeightProgram to fetch.
+     */
+    where?: WeightProgramWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of WeightPrograms to fetch.
+     */
+    orderBy?: WeightProgramOrderByWithRelationInput | WeightProgramOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for WeightPrograms.
+     */
+    cursor?: WeightProgramWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` WeightPrograms from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` WeightPrograms.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of WeightPrograms.
+     */
+    distinct?: WeightProgramScalarFieldEnum | WeightProgramScalarFieldEnum[]
+  }
+
+  /**
+   * WeightProgram findFirstOrThrow
+   */
+  export type WeightProgramFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the WeightProgram
+     */
+    select?: WeightProgramSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the WeightProgram
+     */
+    omit?: WeightProgramOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: WeightProgramInclude<ExtArgs> | null
+    /**
+     * Filter, which WeightProgram to fetch.
+     */
+    where?: WeightProgramWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of WeightPrograms to fetch.
+     */
+    orderBy?: WeightProgramOrderByWithRelationInput | WeightProgramOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for WeightPrograms.
+     */
+    cursor?: WeightProgramWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` WeightPrograms from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` WeightPrograms.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of WeightPrograms.
+     */
+    distinct?: WeightProgramScalarFieldEnum | WeightProgramScalarFieldEnum[]
+  }
+
+  /**
+   * WeightProgram findMany
+   */
+  export type WeightProgramFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the WeightProgram
+     */
+    select?: WeightProgramSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the WeightProgram
+     */
+    omit?: WeightProgramOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: WeightProgramInclude<ExtArgs> | null
+    /**
+     * Filter, which WeightPrograms to fetch.
+     */
+    where?: WeightProgramWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of WeightPrograms to fetch.
+     */
+    orderBy?: WeightProgramOrderByWithRelationInput | WeightProgramOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing WeightPrograms.
+     */
+    cursor?: WeightProgramWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` WeightPrograms from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` WeightPrograms.
+     */
+    skip?: number
+    distinct?: WeightProgramScalarFieldEnum | WeightProgramScalarFieldEnum[]
+  }
+
+  /**
+   * WeightProgram create
+   */
+  export type WeightProgramCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the WeightProgram
+     */
+    select?: WeightProgramSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the WeightProgram
+     */
+    omit?: WeightProgramOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: WeightProgramInclude<ExtArgs> | null
+    /**
+     * The data needed to create a WeightProgram.
+     */
+    data: XOR<WeightProgramCreateInput, WeightProgramUncheckedCreateInput>
+  }
+
+  /**
+   * WeightProgram createMany
+   */
+  export type WeightProgramCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many WeightPrograms.
+     */
+    data: WeightProgramCreateManyInput | WeightProgramCreateManyInput[]
+  }
+
+  /**
+   * WeightProgram createManyAndReturn
+   */
+  export type WeightProgramCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the WeightProgram
+     */
+    select?: WeightProgramSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the WeightProgram
+     */
+    omit?: WeightProgramOmit<ExtArgs> | null
+    /**
+     * The data used to create many WeightPrograms.
+     */
+    data: WeightProgramCreateManyInput | WeightProgramCreateManyInput[]
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: WeightProgramIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * WeightProgram update
+   */
+  export type WeightProgramUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the WeightProgram
+     */
+    select?: WeightProgramSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the WeightProgram
+     */
+    omit?: WeightProgramOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: WeightProgramInclude<ExtArgs> | null
+    /**
+     * The data needed to update a WeightProgram.
+     */
+    data: XOR<WeightProgramUpdateInput, WeightProgramUncheckedUpdateInput>
+    /**
+     * Choose, which WeightProgram to update.
+     */
+    where: WeightProgramWhereUniqueInput
+  }
+
+  /**
+   * WeightProgram updateMany
+   */
+  export type WeightProgramUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update WeightPrograms.
+     */
+    data: XOR<WeightProgramUpdateManyMutationInput, WeightProgramUncheckedUpdateManyInput>
+    /**
+     * Filter which WeightPrograms to update
+     */
+    where?: WeightProgramWhereInput
+    /**
+     * Limit how many WeightPrograms to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * WeightProgram updateManyAndReturn
+   */
+  export type WeightProgramUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the WeightProgram
+     */
+    select?: WeightProgramSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the WeightProgram
+     */
+    omit?: WeightProgramOmit<ExtArgs> | null
+    /**
+     * The data used to update WeightPrograms.
+     */
+    data: XOR<WeightProgramUpdateManyMutationInput, WeightProgramUncheckedUpdateManyInput>
+    /**
+     * Filter which WeightPrograms to update
+     */
+    where?: WeightProgramWhereInput
+    /**
+     * Limit how many WeightPrograms to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: WeightProgramIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * WeightProgram upsert
+   */
+  export type WeightProgramUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the WeightProgram
+     */
+    select?: WeightProgramSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the WeightProgram
+     */
+    omit?: WeightProgramOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: WeightProgramInclude<ExtArgs> | null
+    /**
+     * The filter to search for the WeightProgram to update in case it exists.
+     */
+    where: WeightProgramWhereUniqueInput
+    /**
+     * In case the WeightProgram found by the `where` argument doesn't exist, create a new WeightProgram with this data.
+     */
+    create: XOR<WeightProgramCreateInput, WeightProgramUncheckedCreateInput>
+    /**
+     * In case the WeightProgram was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<WeightProgramUpdateInput, WeightProgramUncheckedUpdateInput>
+  }
+
+  /**
+   * WeightProgram delete
+   */
+  export type WeightProgramDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the WeightProgram
+     */
+    select?: WeightProgramSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the WeightProgram
+     */
+    omit?: WeightProgramOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: WeightProgramInclude<ExtArgs> | null
+    /**
+     * Filter which WeightProgram to delete.
+     */
+    where: WeightProgramWhereUniqueInput
+  }
+
+  /**
+   * WeightProgram deleteMany
+   */
+  export type WeightProgramDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which WeightPrograms to delete
+     */
+    where?: WeightProgramWhereInput
+    /**
+     * Limit how many WeightPrograms to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * WeightProgram.weightRecords
+   */
+  export type WeightProgram$weightRecordsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the WeightRecord
+     */
+    select?: WeightRecordSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the WeightRecord
+     */
+    omit?: WeightRecordOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: WeightRecordInclude<ExtArgs> | null
+    where?: WeightRecordWhereInput
+    orderBy?: WeightRecordOrderByWithRelationInput | WeightRecordOrderByWithRelationInput[]
+    cursor?: WeightRecordWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: WeightRecordScalarFieldEnum | WeightRecordScalarFieldEnum[]
+  }
+
+  /**
+   * WeightProgram without action
+   */
+  export type WeightProgramDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the WeightProgram
+     */
+    select?: WeightProgramSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the WeightProgram
+     */
+    omit?: WeightProgramOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: WeightProgramInclude<ExtArgs> | null
+  }
+
+
+  /**
    * Enums
    */
 
@@ -10959,6 +13452,29 @@ export namespace Prisma {
   export type ProtocolDayUserExerciseScalarFieldEnum = (typeof ProtocolDayUserExerciseScalarFieldEnum)[keyof typeof ProtocolDayUserExerciseScalarFieldEnum]
 
 
+  export const WeightRecordScalarFieldEnum: {
+    id: 'id',
+    createdAt: 'createdAt',
+    value: 'value',
+    smooth: 'smooth',
+    weightProgramId: 'weightProgramId'
+  };
+
+  export type WeightRecordScalarFieldEnum = (typeof WeightRecordScalarFieldEnum)[keyof typeof WeightRecordScalarFieldEnum]
+
+
+  export const WeightProgramScalarFieldEnum: {
+    id: 'id',
+    createdAt: 'createdAt',
+    active: 'active',
+    goalWeight: 'goalWeight',
+    mode: 'mode',
+    userId: 'userId'
+  };
+
+  export type WeightProgramScalarFieldEnum = (typeof WeightProgramScalarFieldEnum)[keyof typeof WeightProgramScalarFieldEnum]
+
+
   export const SortOrder: {
     asc: 'asc',
     desc: 'desc'
@@ -11035,6 +13551,7 @@ export namespace Prisma {
     exerciseWeightUnit?: StringFilter<"User"> | string
     userExcercises?: UserExerciseListRelationFilter
     protocols?: ProtocolListRelationFilter
+    weightPrograms?: WeightProgramListRelationFilter
   }
 
   export type UserOrderByWithRelationInput = {
@@ -11051,6 +13568,7 @@ export namespace Prisma {
     exerciseWeightUnit?: SortOrder
     userExcercises?: UserExerciseOrderByRelationAggregateInput
     protocols?: ProtocolOrderByRelationAggregateInput
+    weightPrograms?: WeightProgramOrderByRelationAggregateInput
   }
 
   export type UserWhereUniqueInput = Prisma.AtLeast<{
@@ -11070,6 +13588,7 @@ export namespace Prisma {
     exerciseWeightUnit?: StringFilter<"User"> | string
     userExcercises?: UserExerciseListRelationFilter
     protocols?: ProtocolListRelationFilter
+    weightPrograms?: WeightProgramListRelationFilter
   }, "id" | "email">
 
   export type UserOrderByWithAggregationInput = {
@@ -11539,6 +14058,128 @@ export namespace Prisma {
     protocolDayId?: IntWithAggregatesFilter<"ProtocolDayUserExercise"> | number
   }
 
+  export type WeightRecordWhereInput = {
+    AND?: WeightRecordWhereInput | WeightRecordWhereInput[]
+    OR?: WeightRecordWhereInput[]
+    NOT?: WeightRecordWhereInput | WeightRecordWhereInput[]
+    id?: IntFilter<"WeightRecord"> | number
+    createdAt?: DateTimeFilter<"WeightRecord"> | Date | string
+    value?: FloatFilter<"WeightRecord"> | number
+    smooth?: FloatFilter<"WeightRecord"> | number
+    weightProgramId?: IntFilter<"WeightRecord"> | number
+    weightProgram?: XOR<WeightProgramScalarRelationFilter, WeightProgramWhereInput>
+  }
+
+  export type WeightRecordOrderByWithRelationInput = {
+    id?: SortOrder
+    createdAt?: SortOrder
+    value?: SortOrder
+    smooth?: SortOrder
+    weightProgramId?: SortOrder
+    weightProgram?: WeightProgramOrderByWithRelationInput
+  }
+
+  export type WeightRecordWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    AND?: WeightRecordWhereInput | WeightRecordWhereInput[]
+    OR?: WeightRecordWhereInput[]
+    NOT?: WeightRecordWhereInput | WeightRecordWhereInput[]
+    createdAt?: DateTimeFilter<"WeightRecord"> | Date | string
+    value?: FloatFilter<"WeightRecord"> | number
+    smooth?: FloatFilter<"WeightRecord"> | number
+    weightProgramId?: IntFilter<"WeightRecord"> | number
+    weightProgram?: XOR<WeightProgramScalarRelationFilter, WeightProgramWhereInput>
+  }, "id">
+
+  export type WeightRecordOrderByWithAggregationInput = {
+    id?: SortOrder
+    createdAt?: SortOrder
+    value?: SortOrder
+    smooth?: SortOrder
+    weightProgramId?: SortOrder
+    _count?: WeightRecordCountOrderByAggregateInput
+    _avg?: WeightRecordAvgOrderByAggregateInput
+    _max?: WeightRecordMaxOrderByAggregateInput
+    _min?: WeightRecordMinOrderByAggregateInput
+    _sum?: WeightRecordSumOrderByAggregateInput
+  }
+
+  export type WeightRecordScalarWhereWithAggregatesInput = {
+    AND?: WeightRecordScalarWhereWithAggregatesInput | WeightRecordScalarWhereWithAggregatesInput[]
+    OR?: WeightRecordScalarWhereWithAggregatesInput[]
+    NOT?: WeightRecordScalarWhereWithAggregatesInput | WeightRecordScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"WeightRecord"> | number
+    createdAt?: DateTimeWithAggregatesFilter<"WeightRecord"> | Date | string
+    value?: FloatWithAggregatesFilter<"WeightRecord"> | number
+    smooth?: FloatWithAggregatesFilter<"WeightRecord"> | number
+    weightProgramId?: IntWithAggregatesFilter<"WeightRecord"> | number
+  }
+
+  export type WeightProgramWhereInput = {
+    AND?: WeightProgramWhereInput | WeightProgramWhereInput[]
+    OR?: WeightProgramWhereInput[]
+    NOT?: WeightProgramWhereInput | WeightProgramWhereInput[]
+    id?: IntFilter<"WeightProgram"> | number
+    createdAt?: DateTimeFilter<"WeightProgram"> | Date | string
+    active?: BoolFilter<"WeightProgram"> | boolean
+    goalWeight?: FloatFilter<"WeightProgram"> | number
+    mode?: StringFilter<"WeightProgram"> | string
+    userId?: IntFilter<"WeightProgram"> | number
+    user?: XOR<UserScalarRelationFilter, UserWhereInput>
+    weightRecords?: WeightRecordListRelationFilter
+  }
+
+  export type WeightProgramOrderByWithRelationInput = {
+    id?: SortOrder
+    createdAt?: SortOrder
+    active?: SortOrder
+    goalWeight?: SortOrder
+    mode?: SortOrder
+    userId?: SortOrder
+    user?: UserOrderByWithRelationInput
+    weightRecords?: WeightRecordOrderByRelationAggregateInput
+  }
+
+  export type WeightProgramWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    AND?: WeightProgramWhereInput | WeightProgramWhereInput[]
+    OR?: WeightProgramWhereInput[]
+    NOT?: WeightProgramWhereInput | WeightProgramWhereInput[]
+    createdAt?: DateTimeFilter<"WeightProgram"> | Date | string
+    active?: BoolFilter<"WeightProgram"> | boolean
+    goalWeight?: FloatFilter<"WeightProgram"> | number
+    mode?: StringFilter<"WeightProgram"> | string
+    userId?: IntFilter<"WeightProgram"> | number
+    user?: XOR<UserScalarRelationFilter, UserWhereInput>
+    weightRecords?: WeightRecordListRelationFilter
+  }, "id">
+
+  export type WeightProgramOrderByWithAggregationInput = {
+    id?: SortOrder
+    createdAt?: SortOrder
+    active?: SortOrder
+    goalWeight?: SortOrder
+    mode?: SortOrder
+    userId?: SortOrder
+    _count?: WeightProgramCountOrderByAggregateInput
+    _avg?: WeightProgramAvgOrderByAggregateInput
+    _max?: WeightProgramMaxOrderByAggregateInput
+    _min?: WeightProgramMinOrderByAggregateInput
+    _sum?: WeightProgramSumOrderByAggregateInput
+  }
+
+  export type WeightProgramScalarWhereWithAggregatesInput = {
+    AND?: WeightProgramScalarWhereWithAggregatesInput | WeightProgramScalarWhereWithAggregatesInput[]
+    OR?: WeightProgramScalarWhereWithAggregatesInput[]
+    NOT?: WeightProgramScalarWhereWithAggregatesInput | WeightProgramScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"WeightProgram"> | number
+    createdAt?: DateTimeWithAggregatesFilter<"WeightProgram"> | Date | string
+    active?: BoolWithAggregatesFilter<"WeightProgram"> | boolean
+    goalWeight?: FloatWithAggregatesFilter<"WeightProgram"> | number
+    mode?: StringWithAggregatesFilter<"WeightProgram"> | string
+    userId?: IntWithAggregatesFilter<"WeightProgram"> | number
+  }
+
   export type UserCreateInput = {
     email: string
     firstName?: string | null
@@ -11552,6 +14193,7 @@ export namespace Prisma {
     exerciseWeightUnit: string
     userExcercises?: UserExerciseCreateNestedManyWithoutUserInput
     protocols?: ProtocolCreateNestedManyWithoutUserInput
+    weightPrograms?: WeightProgramCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateInput = {
@@ -11568,6 +14210,7 @@ export namespace Prisma {
     exerciseWeightUnit: string
     userExcercises?: UserExerciseUncheckedCreateNestedManyWithoutUserInput
     protocols?: ProtocolUncheckedCreateNestedManyWithoutUserInput
+    weightPrograms?: WeightProgramUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserUpdateInput = {
@@ -11583,6 +14226,7 @@ export namespace Prisma {
     exerciseWeightUnit?: StringFieldUpdateOperationsInput | string
     userExcercises?: UserExerciseUpdateManyWithoutUserNestedInput
     protocols?: ProtocolUpdateManyWithoutUserNestedInput
+    weightPrograms?: WeightProgramUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateInput = {
@@ -11599,6 +14243,7 @@ export namespace Prisma {
     exerciseWeightUnit?: StringFieldUpdateOperationsInput | string
     userExcercises?: UserExerciseUncheckedUpdateManyWithoutUserNestedInput
     protocols?: ProtocolUncheckedUpdateManyWithoutUserNestedInput
+    weightPrograms?: WeightProgramUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type UserCreateManyInput = {
@@ -12040,6 +14685,121 @@ export namespace Prisma {
     protocolDayId?: IntFieldUpdateOperationsInput | number
   }
 
+  export type WeightRecordCreateInput = {
+    createdAt?: Date | string
+    value: number
+    smooth: number
+    weightProgram: WeightProgramCreateNestedOneWithoutWeightRecordsInput
+  }
+
+  export type WeightRecordUncheckedCreateInput = {
+    id?: number
+    createdAt?: Date | string
+    value: number
+    smooth: number
+    weightProgramId: number
+  }
+
+  export type WeightRecordUpdateInput = {
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    value?: FloatFieldUpdateOperationsInput | number
+    smooth?: FloatFieldUpdateOperationsInput | number
+    weightProgram?: WeightProgramUpdateOneRequiredWithoutWeightRecordsNestedInput
+  }
+
+  export type WeightRecordUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    value?: FloatFieldUpdateOperationsInput | number
+    smooth?: FloatFieldUpdateOperationsInput | number
+    weightProgramId?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type WeightRecordCreateManyInput = {
+    id?: number
+    createdAt?: Date | string
+    value: number
+    smooth: number
+    weightProgramId: number
+  }
+
+  export type WeightRecordUpdateManyMutationInput = {
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    value?: FloatFieldUpdateOperationsInput | number
+    smooth?: FloatFieldUpdateOperationsInput | number
+  }
+
+  export type WeightRecordUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    value?: FloatFieldUpdateOperationsInput | number
+    smooth?: FloatFieldUpdateOperationsInput | number
+    weightProgramId?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type WeightProgramCreateInput = {
+    createdAt?: Date | string
+    active: boolean
+    goalWeight: number
+    mode: string
+    user: UserCreateNestedOneWithoutWeightProgramsInput
+    weightRecords?: WeightRecordCreateNestedManyWithoutWeightProgramInput
+  }
+
+  export type WeightProgramUncheckedCreateInput = {
+    id?: number
+    createdAt?: Date | string
+    active: boolean
+    goalWeight: number
+    mode: string
+    userId: number
+    weightRecords?: WeightRecordUncheckedCreateNestedManyWithoutWeightProgramInput
+  }
+
+  export type WeightProgramUpdateInput = {
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    active?: BoolFieldUpdateOperationsInput | boolean
+    goalWeight?: FloatFieldUpdateOperationsInput | number
+    mode?: StringFieldUpdateOperationsInput | string
+    user?: UserUpdateOneRequiredWithoutWeightProgramsNestedInput
+    weightRecords?: WeightRecordUpdateManyWithoutWeightProgramNestedInput
+  }
+
+  export type WeightProgramUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    active?: BoolFieldUpdateOperationsInput | boolean
+    goalWeight?: FloatFieldUpdateOperationsInput | number
+    mode?: StringFieldUpdateOperationsInput | string
+    userId?: IntFieldUpdateOperationsInput | number
+    weightRecords?: WeightRecordUncheckedUpdateManyWithoutWeightProgramNestedInput
+  }
+
+  export type WeightProgramCreateManyInput = {
+    id?: number
+    createdAt?: Date | string
+    active: boolean
+    goalWeight: number
+    mode: string
+    userId: number
+  }
+
+  export type WeightProgramUpdateManyMutationInput = {
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    active?: BoolFieldUpdateOperationsInput | boolean
+    goalWeight?: FloatFieldUpdateOperationsInput | number
+    mode?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type WeightProgramUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    active?: BoolFieldUpdateOperationsInput | boolean
+    goalWeight?: FloatFieldUpdateOperationsInput | number
+    mode?: StringFieldUpdateOperationsInput | string
+    userId?: IntFieldUpdateOperationsInput | number
+  }
+
   export type IntFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel>
     in?: number[]
@@ -12113,6 +14873,12 @@ export namespace Prisma {
     none?: ProtocolWhereInput
   }
 
+  export type WeightProgramListRelationFilter = {
+    every?: WeightProgramWhereInput
+    some?: WeightProgramWhereInput
+    none?: WeightProgramWhereInput
+  }
+
   export type SortOrderInput = {
     sort: SortOrder
     nulls?: NullsOrder
@@ -12123,6 +14889,10 @@ export namespace Prisma {
   }
 
   export type ProtocolOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type WeightProgramOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -12602,6 +15372,98 @@ export namespace Prisma {
     protocolDayId?: SortOrder
   }
 
+  export type WeightProgramScalarRelationFilter = {
+    is?: WeightProgramWhereInput
+    isNot?: WeightProgramWhereInput
+  }
+
+  export type WeightRecordCountOrderByAggregateInput = {
+    id?: SortOrder
+    createdAt?: SortOrder
+    value?: SortOrder
+    smooth?: SortOrder
+    weightProgramId?: SortOrder
+  }
+
+  export type WeightRecordAvgOrderByAggregateInput = {
+    id?: SortOrder
+    value?: SortOrder
+    smooth?: SortOrder
+    weightProgramId?: SortOrder
+  }
+
+  export type WeightRecordMaxOrderByAggregateInput = {
+    id?: SortOrder
+    createdAt?: SortOrder
+    value?: SortOrder
+    smooth?: SortOrder
+    weightProgramId?: SortOrder
+  }
+
+  export type WeightRecordMinOrderByAggregateInput = {
+    id?: SortOrder
+    createdAt?: SortOrder
+    value?: SortOrder
+    smooth?: SortOrder
+    weightProgramId?: SortOrder
+  }
+
+  export type WeightRecordSumOrderByAggregateInput = {
+    id?: SortOrder
+    value?: SortOrder
+    smooth?: SortOrder
+    weightProgramId?: SortOrder
+  }
+
+  export type WeightRecordListRelationFilter = {
+    every?: WeightRecordWhereInput
+    some?: WeightRecordWhereInput
+    none?: WeightRecordWhereInput
+  }
+
+  export type WeightRecordOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type WeightProgramCountOrderByAggregateInput = {
+    id?: SortOrder
+    createdAt?: SortOrder
+    active?: SortOrder
+    goalWeight?: SortOrder
+    mode?: SortOrder
+    userId?: SortOrder
+  }
+
+  export type WeightProgramAvgOrderByAggregateInput = {
+    id?: SortOrder
+    goalWeight?: SortOrder
+    userId?: SortOrder
+  }
+
+  export type WeightProgramMaxOrderByAggregateInput = {
+    id?: SortOrder
+    createdAt?: SortOrder
+    active?: SortOrder
+    goalWeight?: SortOrder
+    mode?: SortOrder
+    userId?: SortOrder
+  }
+
+  export type WeightProgramMinOrderByAggregateInput = {
+    id?: SortOrder
+    createdAt?: SortOrder
+    active?: SortOrder
+    goalWeight?: SortOrder
+    mode?: SortOrder
+    userId?: SortOrder
+  }
+
+  export type WeightProgramSumOrderByAggregateInput = {
+    id?: SortOrder
+    goalWeight?: SortOrder
+    userId?: SortOrder
+  }
+
   export type UserExerciseCreateNestedManyWithoutUserInput = {
     create?: XOR<UserExerciseCreateWithoutUserInput, UserExerciseUncheckedCreateWithoutUserInput> | UserExerciseCreateWithoutUserInput[] | UserExerciseUncheckedCreateWithoutUserInput[]
     connectOrCreate?: UserExerciseCreateOrConnectWithoutUserInput | UserExerciseCreateOrConnectWithoutUserInput[]
@@ -12616,6 +15478,13 @@ export namespace Prisma {
     connect?: ProtocolWhereUniqueInput | ProtocolWhereUniqueInput[]
   }
 
+  export type WeightProgramCreateNestedManyWithoutUserInput = {
+    create?: XOR<WeightProgramCreateWithoutUserInput, WeightProgramUncheckedCreateWithoutUserInput> | WeightProgramCreateWithoutUserInput[] | WeightProgramUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: WeightProgramCreateOrConnectWithoutUserInput | WeightProgramCreateOrConnectWithoutUserInput[]
+    createMany?: WeightProgramCreateManyUserInputEnvelope
+    connect?: WeightProgramWhereUniqueInput | WeightProgramWhereUniqueInput[]
+  }
+
   export type UserExerciseUncheckedCreateNestedManyWithoutUserInput = {
     create?: XOR<UserExerciseCreateWithoutUserInput, UserExerciseUncheckedCreateWithoutUserInput> | UserExerciseCreateWithoutUserInput[] | UserExerciseUncheckedCreateWithoutUserInput[]
     connectOrCreate?: UserExerciseCreateOrConnectWithoutUserInput | UserExerciseCreateOrConnectWithoutUserInput[]
@@ -12628,6 +15497,13 @@ export namespace Prisma {
     connectOrCreate?: ProtocolCreateOrConnectWithoutUserInput | ProtocolCreateOrConnectWithoutUserInput[]
     createMany?: ProtocolCreateManyUserInputEnvelope
     connect?: ProtocolWhereUniqueInput | ProtocolWhereUniqueInput[]
+  }
+
+  export type WeightProgramUncheckedCreateNestedManyWithoutUserInput = {
+    create?: XOR<WeightProgramCreateWithoutUserInput, WeightProgramUncheckedCreateWithoutUserInput> | WeightProgramCreateWithoutUserInput[] | WeightProgramUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: WeightProgramCreateOrConnectWithoutUserInput | WeightProgramCreateOrConnectWithoutUserInput[]
+    createMany?: WeightProgramCreateManyUserInputEnvelope
+    connect?: WeightProgramWhereUniqueInput | WeightProgramWhereUniqueInput[]
   }
 
   export type StringFieldUpdateOperationsInput = {
@@ -12678,6 +15554,20 @@ export namespace Prisma {
     deleteMany?: ProtocolScalarWhereInput | ProtocolScalarWhereInput[]
   }
 
+  export type WeightProgramUpdateManyWithoutUserNestedInput = {
+    create?: XOR<WeightProgramCreateWithoutUserInput, WeightProgramUncheckedCreateWithoutUserInput> | WeightProgramCreateWithoutUserInput[] | WeightProgramUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: WeightProgramCreateOrConnectWithoutUserInput | WeightProgramCreateOrConnectWithoutUserInput[]
+    upsert?: WeightProgramUpsertWithWhereUniqueWithoutUserInput | WeightProgramUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: WeightProgramCreateManyUserInputEnvelope
+    set?: WeightProgramWhereUniqueInput | WeightProgramWhereUniqueInput[]
+    disconnect?: WeightProgramWhereUniqueInput | WeightProgramWhereUniqueInput[]
+    delete?: WeightProgramWhereUniqueInput | WeightProgramWhereUniqueInput[]
+    connect?: WeightProgramWhereUniqueInput | WeightProgramWhereUniqueInput[]
+    update?: WeightProgramUpdateWithWhereUniqueWithoutUserInput | WeightProgramUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: WeightProgramUpdateManyWithWhereWithoutUserInput | WeightProgramUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: WeightProgramScalarWhereInput | WeightProgramScalarWhereInput[]
+  }
+
   export type IntFieldUpdateOperationsInput = {
     set?: number
     increment?: number
@@ -12712,6 +15602,20 @@ export namespace Prisma {
     update?: ProtocolUpdateWithWhereUniqueWithoutUserInput | ProtocolUpdateWithWhereUniqueWithoutUserInput[]
     updateMany?: ProtocolUpdateManyWithWhereWithoutUserInput | ProtocolUpdateManyWithWhereWithoutUserInput[]
     deleteMany?: ProtocolScalarWhereInput | ProtocolScalarWhereInput[]
+  }
+
+  export type WeightProgramUncheckedUpdateManyWithoutUserNestedInput = {
+    create?: XOR<WeightProgramCreateWithoutUserInput, WeightProgramUncheckedCreateWithoutUserInput> | WeightProgramCreateWithoutUserInput[] | WeightProgramUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: WeightProgramCreateOrConnectWithoutUserInput | WeightProgramCreateOrConnectWithoutUserInput[]
+    upsert?: WeightProgramUpsertWithWhereUniqueWithoutUserInput | WeightProgramUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: WeightProgramCreateManyUserInputEnvelope
+    set?: WeightProgramWhereUniqueInput | WeightProgramWhereUniqueInput[]
+    disconnect?: WeightProgramWhereUniqueInput | WeightProgramWhereUniqueInput[]
+    delete?: WeightProgramWhereUniqueInput | WeightProgramWhereUniqueInput[]
+    connect?: WeightProgramWhereUniqueInput | WeightProgramWhereUniqueInput[]
+    update?: WeightProgramUpdateWithWhereUniqueWithoutUserInput | WeightProgramUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: WeightProgramUpdateManyWithWhereWithoutUserInput | WeightProgramUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: WeightProgramScalarWhereInput | WeightProgramScalarWhereInput[]
   }
 
   export type UserExerciseCreateNestedManyWithoutExerciseInput = {
@@ -13138,6 +16042,76 @@ export namespace Prisma {
     update?: XOR<XOR<ProtocolDayUpdateToOneWithWhereWithoutProtocolDayUserExercisesInput, ProtocolDayUpdateWithoutProtocolDayUserExercisesInput>, ProtocolDayUncheckedUpdateWithoutProtocolDayUserExercisesInput>
   }
 
+  export type WeightProgramCreateNestedOneWithoutWeightRecordsInput = {
+    create?: XOR<WeightProgramCreateWithoutWeightRecordsInput, WeightProgramUncheckedCreateWithoutWeightRecordsInput>
+    connectOrCreate?: WeightProgramCreateOrConnectWithoutWeightRecordsInput
+    connect?: WeightProgramWhereUniqueInput
+  }
+
+  export type WeightProgramUpdateOneRequiredWithoutWeightRecordsNestedInput = {
+    create?: XOR<WeightProgramCreateWithoutWeightRecordsInput, WeightProgramUncheckedCreateWithoutWeightRecordsInput>
+    connectOrCreate?: WeightProgramCreateOrConnectWithoutWeightRecordsInput
+    upsert?: WeightProgramUpsertWithoutWeightRecordsInput
+    connect?: WeightProgramWhereUniqueInput
+    update?: XOR<XOR<WeightProgramUpdateToOneWithWhereWithoutWeightRecordsInput, WeightProgramUpdateWithoutWeightRecordsInput>, WeightProgramUncheckedUpdateWithoutWeightRecordsInput>
+  }
+
+  export type UserCreateNestedOneWithoutWeightProgramsInput = {
+    create?: XOR<UserCreateWithoutWeightProgramsInput, UserUncheckedCreateWithoutWeightProgramsInput>
+    connectOrCreate?: UserCreateOrConnectWithoutWeightProgramsInput
+    connect?: UserWhereUniqueInput
+  }
+
+  export type WeightRecordCreateNestedManyWithoutWeightProgramInput = {
+    create?: XOR<WeightRecordCreateWithoutWeightProgramInput, WeightRecordUncheckedCreateWithoutWeightProgramInput> | WeightRecordCreateWithoutWeightProgramInput[] | WeightRecordUncheckedCreateWithoutWeightProgramInput[]
+    connectOrCreate?: WeightRecordCreateOrConnectWithoutWeightProgramInput | WeightRecordCreateOrConnectWithoutWeightProgramInput[]
+    createMany?: WeightRecordCreateManyWeightProgramInputEnvelope
+    connect?: WeightRecordWhereUniqueInput | WeightRecordWhereUniqueInput[]
+  }
+
+  export type WeightRecordUncheckedCreateNestedManyWithoutWeightProgramInput = {
+    create?: XOR<WeightRecordCreateWithoutWeightProgramInput, WeightRecordUncheckedCreateWithoutWeightProgramInput> | WeightRecordCreateWithoutWeightProgramInput[] | WeightRecordUncheckedCreateWithoutWeightProgramInput[]
+    connectOrCreate?: WeightRecordCreateOrConnectWithoutWeightProgramInput | WeightRecordCreateOrConnectWithoutWeightProgramInput[]
+    createMany?: WeightRecordCreateManyWeightProgramInputEnvelope
+    connect?: WeightRecordWhereUniqueInput | WeightRecordWhereUniqueInput[]
+  }
+
+  export type UserUpdateOneRequiredWithoutWeightProgramsNestedInput = {
+    create?: XOR<UserCreateWithoutWeightProgramsInput, UserUncheckedCreateWithoutWeightProgramsInput>
+    connectOrCreate?: UserCreateOrConnectWithoutWeightProgramsInput
+    upsert?: UserUpsertWithoutWeightProgramsInput
+    connect?: UserWhereUniqueInput
+    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutWeightProgramsInput, UserUpdateWithoutWeightProgramsInput>, UserUncheckedUpdateWithoutWeightProgramsInput>
+  }
+
+  export type WeightRecordUpdateManyWithoutWeightProgramNestedInput = {
+    create?: XOR<WeightRecordCreateWithoutWeightProgramInput, WeightRecordUncheckedCreateWithoutWeightProgramInput> | WeightRecordCreateWithoutWeightProgramInput[] | WeightRecordUncheckedCreateWithoutWeightProgramInput[]
+    connectOrCreate?: WeightRecordCreateOrConnectWithoutWeightProgramInput | WeightRecordCreateOrConnectWithoutWeightProgramInput[]
+    upsert?: WeightRecordUpsertWithWhereUniqueWithoutWeightProgramInput | WeightRecordUpsertWithWhereUniqueWithoutWeightProgramInput[]
+    createMany?: WeightRecordCreateManyWeightProgramInputEnvelope
+    set?: WeightRecordWhereUniqueInput | WeightRecordWhereUniqueInput[]
+    disconnect?: WeightRecordWhereUniqueInput | WeightRecordWhereUniqueInput[]
+    delete?: WeightRecordWhereUniqueInput | WeightRecordWhereUniqueInput[]
+    connect?: WeightRecordWhereUniqueInput | WeightRecordWhereUniqueInput[]
+    update?: WeightRecordUpdateWithWhereUniqueWithoutWeightProgramInput | WeightRecordUpdateWithWhereUniqueWithoutWeightProgramInput[]
+    updateMany?: WeightRecordUpdateManyWithWhereWithoutWeightProgramInput | WeightRecordUpdateManyWithWhereWithoutWeightProgramInput[]
+    deleteMany?: WeightRecordScalarWhereInput | WeightRecordScalarWhereInput[]
+  }
+
+  export type WeightRecordUncheckedUpdateManyWithoutWeightProgramNestedInput = {
+    create?: XOR<WeightRecordCreateWithoutWeightProgramInput, WeightRecordUncheckedCreateWithoutWeightProgramInput> | WeightRecordCreateWithoutWeightProgramInput[] | WeightRecordUncheckedCreateWithoutWeightProgramInput[]
+    connectOrCreate?: WeightRecordCreateOrConnectWithoutWeightProgramInput | WeightRecordCreateOrConnectWithoutWeightProgramInput[]
+    upsert?: WeightRecordUpsertWithWhereUniqueWithoutWeightProgramInput | WeightRecordUpsertWithWhereUniqueWithoutWeightProgramInput[]
+    createMany?: WeightRecordCreateManyWeightProgramInputEnvelope
+    set?: WeightRecordWhereUniqueInput | WeightRecordWhereUniqueInput[]
+    disconnect?: WeightRecordWhereUniqueInput | WeightRecordWhereUniqueInput[]
+    delete?: WeightRecordWhereUniqueInput | WeightRecordWhereUniqueInput[]
+    connect?: WeightRecordWhereUniqueInput | WeightRecordWhereUniqueInput[]
+    update?: WeightRecordUpdateWithWhereUniqueWithoutWeightProgramInput | WeightRecordUpdateWithWhereUniqueWithoutWeightProgramInput[]
+    updateMany?: WeightRecordUpdateManyWithWhereWithoutWeightProgramInput | WeightRecordUpdateManyWithWhereWithoutWeightProgramInput[]
+    deleteMany?: WeightRecordScalarWhereInput | WeightRecordScalarWhereInput[]
+  }
+
   export type NestedIntFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel>
     in?: number[]
@@ -13359,6 +16333,32 @@ export namespace Prisma {
     data: ProtocolCreateManyUserInput | ProtocolCreateManyUserInput[]
   }
 
+  export type WeightProgramCreateWithoutUserInput = {
+    createdAt?: Date | string
+    active: boolean
+    goalWeight: number
+    mode: string
+    weightRecords?: WeightRecordCreateNestedManyWithoutWeightProgramInput
+  }
+
+  export type WeightProgramUncheckedCreateWithoutUserInput = {
+    id?: number
+    createdAt?: Date | string
+    active: boolean
+    goalWeight: number
+    mode: string
+    weightRecords?: WeightRecordUncheckedCreateNestedManyWithoutWeightProgramInput
+  }
+
+  export type WeightProgramCreateOrConnectWithoutUserInput = {
+    where: WeightProgramWhereUniqueInput
+    create: XOR<WeightProgramCreateWithoutUserInput, WeightProgramUncheckedCreateWithoutUserInput>
+  }
+
+  export type WeightProgramCreateManyUserInputEnvelope = {
+    data: WeightProgramCreateManyUserInput | WeightProgramCreateManyUserInput[]
+  }
+
   export type UserExerciseUpsertWithWhereUniqueWithoutUserInput = {
     where: UserExerciseWhereUniqueInput
     update: XOR<UserExerciseUpdateWithoutUserInput, UserExerciseUncheckedUpdateWithoutUserInput>
@@ -13414,6 +16414,34 @@ export namespace Prisma {
     startedAt?: DateTimeFilter<"Protocol"> | Date | string
     active?: BoolFilter<"Protocol"> | boolean
     userId?: IntFilter<"Protocol"> | number
+  }
+
+  export type WeightProgramUpsertWithWhereUniqueWithoutUserInput = {
+    where: WeightProgramWhereUniqueInput
+    update: XOR<WeightProgramUpdateWithoutUserInput, WeightProgramUncheckedUpdateWithoutUserInput>
+    create: XOR<WeightProgramCreateWithoutUserInput, WeightProgramUncheckedCreateWithoutUserInput>
+  }
+
+  export type WeightProgramUpdateWithWhereUniqueWithoutUserInput = {
+    where: WeightProgramWhereUniqueInput
+    data: XOR<WeightProgramUpdateWithoutUserInput, WeightProgramUncheckedUpdateWithoutUserInput>
+  }
+
+  export type WeightProgramUpdateManyWithWhereWithoutUserInput = {
+    where: WeightProgramScalarWhereInput
+    data: XOR<WeightProgramUpdateManyMutationInput, WeightProgramUncheckedUpdateManyWithoutUserInput>
+  }
+
+  export type WeightProgramScalarWhereInput = {
+    AND?: WeightProgramScalarWhereInput | WeightProgramScalarWhereInput[]
+    OR?: WeightProgramScalarWhereInput[]
+    NOT?: WeightProgramScalarWhereInput | WeightProgramScalarWhereInput[]
+    id?: IntFilter<"WeightProgram"> | number
+    createdAt?: DateTimeFilter<"WeightProgram"> | Date | string
+    active?: BoolFilter<"WeightProgram"> | boolean
+    goalWeight?: FloatFilter<"WeightProgram"> | number
+    mode?: StringFilter<"WeightProgram"> | string
+    userId?: IntFilter<"WeightProgram"> | number
   }
 
   export type UserExerciseCreateWithoutExerciseInput = {
@@ -13474,6 +16502,7 @@ export namespace Prisma {
     bodyWeightUnit: string
     exerciseWeightUnit: string
     protocols?: ProtocolCreateNestedManyWithoutUserInput
+    weightPrograms?: WeightProgramCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateWithoutUserExcercisesInput = {
@@ -13489,6 +16518,7 @@ export namespace Prisma {
     bodyWeightUnit: string
     exerciseWeightUnit: string
     protocols?: ProtocolUncheckedCreateNestedManyWithoutUserInput
+    weightPrograms?: WeightProgramUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserCreateOrConnectWithoutUserExcercisesInput = {
@@ -13581,6 +16611,7 @@ export namespace Prisma {
     bodyWeightUnit?: StringFieldUpdateOperationsInput | string
     exerciseWeightUnit?: StringFieldUpdateOperationsInput | string
     protocols?: ProtocolUpdateManyWithoutUserNestedInput
+    weightPrograms?: WeightProgramUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateWithoutUserExcercisesInput = {
@@ -13596,6 +16627,7 @@ export namespace Prisma {
     bodyWeightUnit?: StringFieldUpdateOperationsInput | string
     exerciseWeightUnit?: StringFieldUpdateOperationsInput | string
     protocols?: ProtocolUncheckedUpdateManyWithoutUserNestedInput
+    weightPrograms?: WeightProgramUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type ExerciseUpsertWithoutUserExcercisesInput = {
@@ -13689,6 +16721,7 @@ export namespace Prisma {
     bodyWeightUnit: string
     exerciseWeightUnit: string
     userExcercises?: UserExerciseCreateNestedManyWithoutUserInput
+    weightPrograms?: WeightProgramCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateWithoutProtocolsInput = {
@@ -13704,6 +16737,7 @@ export namespace Prisma {
     bodyWeightUnit: string
     exerciseWeightUnit: string
     userExcercises?: UserExerciseUncheckedCreateNestedManyWithoutUserInput
+    weightPrograms?: WeightProgramUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserCreateOrConnectWithoutProtocolsInput = {
@@ -13760,6 +16794,7 @@ export namespace Prisma {
     bodyWeightUnit?: StringFieldUpdateOperationsInput | string
     exerciseWeightUnit?: StringFieldUpdateOperationsInput | string
     userExcercises?: UserExerciseUpdateManyWithoutUserNestedInput
+    weightPrograms?: WeightProgramUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateWithoutProtocolsInput = {
@@ -13775,6 +16810,7 @@ export namespace Prisma {
     bodyWeightUnit?: StringFieldUpdateOperationsInput | string
     exerciseWeightUnit?: StringFieldUpdateOperationsInput | string
     userExcercises?: UserExerciseUncheckedUpdateManyWithoutUserNestedInput
+    weightPrograms?: WeightProgramUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type ProtocolDayUpsertWithWhereUniqueWithoutProtocolInput = {
@@ -14234,6 +17270,183 @@ export namespace Prisma {
     workouts?: WorkoutUncheckedUpdateManyWithoutProtocolDayNestedInput
   }
 
+  export type WeightProgramCreateWithoutWeightRecordsInput = {
+    createdAt?: Date | string
+    active: boolean
+    goalWeight: number
+    mode: string
+    user: UserCreateNestedOneWithoutWeightProgramsInput
+  }
+
+  export type WeightProgramUncheckedCreateWithoutWeightRecordsInput = {
+    id?: number
+    createdAt?: Date | string
+    active: boolean
+    goalWeight: number
+    mode: string
+    userId: number
+  }
+
+  export type WeightProgramCreateOrConnectWithoutWeightRecordsInput = {
+    where: WeightProgramWhereUniqueInput
+    create: XOR<WeightProgramCreateWithoutWeightRecordsInput, WeightProgramUncheckedCreateWithoutWeightRecordsInput>
+  }
+
+  export type WeightProgramUpsertWithoutWeightRecordsInput = {
+    update: XOR<WeightProgramUpdateWithoutWeightRecordsInput, WeightProgramUncheckedUpdateWithoutWeightRecordsInput>
+    create: XOR<WeightProgramCreateWithoutWeightRecordsInput, WeightProgramUncheckedCreateWithoutWeightRecordsInput>
+    where?: WeightProgramWhereInput
+  }
+
+  export type WeightProgramUpdateToOneWithWhereWithoutWeightRecordsInput = {
+    where?: WeightProgramWhereInput
+    data: XOR<WeightProgramUpdateWithoutWeightRecordsInput, WeightProgramUncheckedUpdateWithoutWeightRecordsInput>
+  }
+
+  export type WeightProgramUpdateWithoutWeightRecordsInput = {
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    active?: BoolFieldUpdateOperationsInput | boolean
+    goalWeight?: FloatFieldUpdateOperationsInput | number
+    mode?: StringFieldUpdateOperationsInput | string
+    user?: UserUpdateOneRequiredWithoutWeightProgramsNestedInput
+  }
+
+  export type WeightProgramUncheckedUpdateWithoutWeightRecordsInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    active?: BoolFieldUpdateOperationsInput | boolean
+    goalWeight?: FloatFieldUpdateOperationsInput | number
+    mode?: StringFieldUpdateOperationsInput | string
+    userId?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type UserCreateWithoutWeightProgramsInput = {
+    email: string
+    firstName?: string | null
+    lastName?: string | null
+    birthDate: Date | string
+    gender: string
+    weight: number
+    height: number
+    password: string
+    bodyWeightUnit: string
+    exerciseWeightUnit: string
+    userExcercises?: UserExerciseCreateNestedManyWithoutUserInput
+    protocols?: ProtocolCreateNestedManyWithoutUserInput
+  }
+
+  export type UserUncheckedCreateWithoutWeightProgramsInput = {
+    id?: number
+    email: string
+    firstName?: string | null
+    lastName?: string | null
+    birthDate: Date | string
+    gender: string
+    weight: number
+    height: number
+    password: string
+    bodyWeightUnit: string
+    exerciseWeightUnit: string
+    userExcercises?: UserExerciseUncheckedCreateNestedManyWithoutUserInput
+    protocols?: ProtocolUncheckedCreateNestedManyWithoutUserInput
+  }
+
+  export type UserCreateOrConnectWithoutWeightProgramsInput = {
+    where: UserWhereUniqueInput
+    create: XOR<UserCreateWithoutWeightProgramsInput, UserUncheckedCreateWithoutWeightProgramsInput>
+  }
+
+  export type WeightRecordCreateWithoutWeightProgramInput = {
+    createdAt?: Date | string
+    value: number
+    smooth: number
+  }
+
+  export type WeightRecordUncheckedCreateWithoutWeightProgramInput = {
+    id?: number
+    createdAt?: Date | string
+    value: number
+    smooth: number
+  }
+
+  export type WeightRecordCreateOrConnectWithoutWeightProgramInput = {
+    where: WeightRecordWhereUniqueInput
+    create: XOR<WeightRecordCreateWithoutWeightProgramInput, WeightRecordUncheckedCreateWithoutWeightProgramInput>
+  }
+
+  export type WeightRecordCreateManyWeightProgramInputEnvelope = {
+    data: WeightRecordCreateManyWeightProgramInput | WeightRecordCreateManyWeightProgramInput[]
+  }
+
+  export type UserUpsertWithoutWeightProgramsInput = {
+    update: XOR<UserUpdateWithoutWeightProgramsInput, UserUncheckedUpdateWithoutWeightProgramsInput>
+    create: XOR<UserCreateWithoutWeightProgramsInput, UserUncheckedCreateWithoutWeightProgramsInput>
+    where?: UserWhereInput
+  }
+
+  export type UserUpdateToOneWithWhereWithoutWeightProgramsInput = {
+    where?: UserWhereInput
+    data: XOR<UserUpdateWithoutWeightProgramsInput, UserUncheckedUpdateWithoutWeightProgramsInput>
+  }
+
+  export type UserUpdateWithoutWeightProgramsInput = {
+    email?: StringFieldUpdateOperationsInput | string
+    firstName?: NullableStringFieldUpdateOperationsInput | string | null
+    lastName?: NullableStringFieldUpdateOperationsInput | string | null
+    birthDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    gender?: StringFieldUpdateOperationsInput | string
+    weight?: FloatFieldUpdateOperationsInput | number
+    height?: FloatFieldUpdateOperationsInput | number
+    password?: StringFieldUpdateOperationsInput | string
+    bodyWeightUnit?: StringFieldUpdateOperationsInput | string
+    exerciseWeightUnit?: StringFieldUpdateOperationsInput | string
+    userExcercises?: UserExerciseUpdateManyWithoutUserNestedInput
+    protocols?: ProtocolUpdateManyWithoutUserNestedInput
+  }
+
+  export type UserUncheckedUpdateWithoutWeightProgramsInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    email?: StringFieldUpdateOperationsInput | string
+    firstName?: NullableStringFieldUpdateOperationsInput | string | null
+    lastName?: NullableStringFieldUpdateOperationsInput | string | null
+    birthDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    gender?: StringFieldUpdateOperationsInput | string
+    weight?: FloatFieldUpdateOperationsInput | number
+    height?: FloatFieldUpdateOperationsInput | number
+    password?: StringFieldUpdateOperationsInput | string
+    bodyWeightUnit?: StringFieldUpdateOperationsInput | string
+    exerciseWeightUnit?: StringFieldUpdateOperationsInput | string
+    userExcercises?: UserExerciseUncheckedUpdateManyWithoutUserNestedInput
+    protocols?: ProtocolUncheckedUpdateManyWithoutUserNestedInput
+  }
+
+  export type WeightRecordUpsertWithWhereUniqueWithoutWeightProgramInput = {
+    where: WeightRecordWhereUniqueInput
+    update: XOR<WeightRecordUpdateWithoutWeightProgramInput, WeightRecordUncheckedUpdateWithoutWeightProgramInput>
+    create: XOR<WeightRecordCreateWithoutWeightProgramInput, WeightRecordUncheckedCreateWithoutWeightProgramInput>
+  }
+
+  export type WeightRecordUpdateWithWhereUniqueWithoutWeightProgramInput = {
+    where: WeightRecordWhereUniqueInput
+    data: XOR<WeightRecordUpdateWithoutWeightProgramInput, WeightRecordUncheckedUpdateWithoutWeightProgramInput>
+  }
+
+  export type WeightRecordUpdateManyWithWhereWithoutWeightProgramInput = {
+    where: WeightRecordScalarWhereInput
+    data: XOR<WeightRecordUpdateManyMutationInput, WeightRecordUncheckedUpdateManyWithoutWeightProgramInput>
+  }
+
+  export type WeightRecordScalarWhereInput = {
+    AND?: WeightRecordScalarWhereInput | WeightRecordScalarWhereInput[]
+    OR?: WeightRecordScalarWhereInput[]
+    NOT?: WeightRecordScalarWhereInput | WeightRecordScalarWhereInput[]
+    id?: IntFilter<"WeightRecord"> | number
+    createdAt?: DateTimeFilter<"WeightRecord"> | Date | string
+    value?: FloatFilter<"WeightRecord"> | number
+    smooth?: FloatFilter<"WeightRecord"> | number
+    weightProgramId?: IntFilter<"WeightRecord"> | number
+  }
+
   export type UserExerciseCreateManyUserInput = {
     id?: number
     currSets: number
@@ -14249,6 +17462,14 @@ export namespace Prisma {
     createdAt?: Date | string
     startedAt?: Date | string
     active: boolean
+  }
+
+  export type WeightProgramCreateManyUserInput = {
+    id?: number
+    createdAt?: Date | string
+    active: boolean
+    goalWeight: number
+    mode: string
   }
 
   export type UserExerciseUpdateWithoutUserInput = {
@@ -14304,6 +17525,31 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     startedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     active?: BoolFieldUpdateOperationsInput | boolean
+  }
+
+  export type WeightProgramUpdateWithoutUserInput = {
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    active?: BoolFieldUpdateOperationsInput | boolean
+    goalWeight?: FloatFieldUpdateOperationsInput | number
+    mode?: StringFieldUpdateOperationsInput | string
+    weightRecords?: WeightRecordUpdateManyWithoutWeightProgramNestedInput
+  }
+
+  export type WeightProgramUncheckedUpdateWithoutUserInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    active?: BoolFieldUpdateOperationsInput | boolean
+    goalWeight?: FloatFieldUpdateOperationsInput | number
+    mode?: StringFieldUpdateOperationsInput | string
+    weightRecords?: WeightRecordUncheckedUpdateManyWithoutWeightProgramNestedInput
+  }
+
+  export type WeightProgramUncheckedUpdateManyWithoutUserInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    active?: BoolFieldUpdateOperationsInput | boolean
+    goalWeight?: FloatFieldUpdateOperationsInput | number
+    mode?: StringFieldUpdateOperationsInput | string
   }
 
   export type UserExerciseCreateManyExerciseInput = {
@@ -14499,6 +17745,33 @@ export namespace Prisma {
     set?: IntFieldUpdateOperationsInput | number
     weight?: FloatFieldUpdateOperationsInput | number
     userExerciseId?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type WeightRecordCreateManyWeightProgramInput = {
+    id?: number
+    createdAt?: Date | string
+    value: number
+    smooth: number
+  }
+
+  export type WeightRecordUpdateWithoutWeightProgramInput = {
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    value?: FloatFieldUpdateOperationsInput | number
+    smooth?: FloatFieldUpdateOperationsInput | number
+  }
+
+  export type WeightRecordUncheckedUpdateWithoutWeightProgramInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    value?: FloatFieldUpdateOperationsInput | number
+    smooth?: FloatFieldUpdateOperationsInput | number
+  }
+
+  export type WeightRecordUncheckedUpdateManyWithoutWeightProgramInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    value?: FloatFieldUpdateOperationsInput | number
+    smooth?: FloatFieldUpdateOperationsInput | number
   }
 
 

@@ -185,6 +185,23 @@ exports.Prisma.ProtocolDayUserExerciseScalarFieldEnum = {
   protocolDayId: 'protocolDayId'
 };
 
+exports.Prisma.WeightRecordScalarFieldEnum = {
+  id: 'id',
+  createdAt: 'createdAt',
+  value: 'value',
+  smooth: 'smooth',
+  weightProgramId: 'weightProgramId'
+};
+
+exports.Prisma.WeightProgramScalarFieldEnum = {
+  id: 'id',
+  createdAt: 'createdAt',
+  active: 'active',
+  goalWeight: 'goalWeight',
+  mode: 'mode',
+  userId: 'userId'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -204,7 +221,9 @@ exports.Prisma.ModelName = {
   ProtocolDay: 'ProtocolDay',
   Workout: 'Workout',
   ExerciseRecord: 'ExerciseRecord',
-  ProtocolDayUserExercise: 'ProtocolDayUserExercise'
+  ProtocolDayUserExercise: 'ProtocolDayUserExercise',
+  WeightRecord: 'WeightRecord',
+  WeightProgram: 'WeightProgram'
 };
 
 /**
