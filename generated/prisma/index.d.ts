@@ -1974,7 +1974,7 @@ export namespace Prisma {
     weight: number | null
     height: number | null
     password: string | null
-    bodyWeightUnit: string | null
+    measurementUnit: string | null
     exerciseWeightUnit: string | null
   }
 
@@ -1988,7 +1988,7 @@ export namespace Prisma {
     weight: number | null
     height: number | null
     password: string | null
-    bodyWeightUnit: string | null
+    measurementUnit: string | null
     exerciseWeightUnit: string | null
   }
 
@@ -2002,7 +2002,7 @@ export namespace Prisma {
     weight: number
     height: number
     password: number
-    bodyWeightUnit: number
+    measurementUnit: number
     exerciseWeightUnit: number
     _all: number
   }
@@ -2030,7 +2030,7 @@ export namespace Prisma {
     weight?: true
     height?: true
     password?: true
-    bodyWeightUnit?: true
+    measurementUnit?: true
     exerciseWeightUnit?: true
   }
 
@@ -2044,7 +2044,7 @@ export namespace Prisma {
     weight?: true
     height?: true
     password?: true
-    bodyWeightUnit?: true
+    measurementUnit?: true
     exerciseWeightUnit?: true
   }
 
@@ -2058,7 +2058,7 @@ export namespace Prisma {
     weight?: true
     height?: true
     password?: true
-    bodyWeightUnit?: true
+    measurementUnit?: true
     exerciseWeightUnit?: true
     _all?: true
   }
@@ -2159,7 +2159,7 @@ export namespace Prisma {
     weight: number
     height: number
     password: string
-    bodyWeightUnit: string
+    measurementUnit: string
     exerciseWeightUnit: string
     _count: UserCountAggregateOutputType | null
     _avg: UserAvgAggregateOutputType | null
@@ -2192,7 +2192,7 @@ export namespace Prisma {
     weight?: boolean
     height?: boolean
     password?: boolean
-    bodyWeightUnit?: boolean
+    measurementUnit?: boolean
     exerciseWeightUnit?: boolean
     userExcercises?: boolean | User$userExcercisesArgs<ExtArgs>
     protocols?: boolean | User$protocolsArgs<ExtArgs>
@@ -2210,7 +2210,7 @@ export namespace Prisma {
     weight?: boolean
     height?: boolean
     password?: boolean
-    bodyWeightUnit?: boolean
+    measurementUnit?: boolean
     exerciseWeightUnit?: boolean
   }, ExtArgs["result"]["user"]>
 
@@ -2224,7 +2224,7 @@ export namespace Prisma {
     weight?: boolean
     height?: boolean
     password?: boolean
-    bodyWeightUnit?: boolean
+    measurementUnit?: boolean
     exerciseWeightUnit?: boolean
   }, ExtArgs["result"]["user"]>
 
@@ -2238,11 +2238,11 @@ export namespace Prisma {
     weight?: boolean
     height?: boolean
     password?: boolean
-    bodyWeightUnit?: boolean
+    measurementUnit?: boolean
     exerciseWeightUnit?: boolean
   }
 
-  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "email" | "firstName" | "lastName" | "birthDate" | "gender" | "weight" | "height" | "password" | "bodyWeightUnit" | "exerciseWeightUnit", ExtArgs["result"]["user"]>
+  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "email" | "firstName" | "lastName" | "birthDate" | "gender" | "weight" | "height" | "password" | "measurementUnit" | "exerciseWeightUnit", ExtArgs["result"]["user"]>
   export type UserInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     userExcercises?: boolean | User$userExcercisesArgs<ExtArgs>
     protocols?: boolean | User$protocolsArgs<ExtArgs>
@@ -2269,7 +2269,7 @@ export namespace Prisma {
       weight: number
       height: number
       password: string
-      bodyWeightUnit: string
+      measurementUnit: string
       exerciseWeightUnit: string
     }, ExtArgs["result"]["user"]>
     composites: {}
@@ -2706,7 +2706,7 @@ export namespace Prisma {
     readonly weight: FieldRef<"User", 'Float'>
     readonly height: FieldRef<"User", 'Float'>
     readonly password: FieldRef<"User", 'String'>
-    readonly bodyWeightUnit: FieldRef<"User", 'String'>
+    readonly measurementUnit: FieldRef<"User", 'String'>
     readonly exerciseWeightUnit: FieldRef<"User", 'String'>
   }
     
@@ -13367,7 +13367,7 @@ export namespace Prisma {
     weight: 'weight',
     height: 'height',
     password: 'password',
-    bodyWeightUnit: 'bodyWeightUnit',
+    measurementUnit: 'measurementUnit',
     exerciseWeightUnit: 'exerciseWeightUnit'
   };
 
@@ -13547,7 +13547,7 @@ export namespace Prisma {
     weight?: FloatFilter<"User"> | number
     height?: FloatFilter<"User"> | number
     password?: StringFilter<"User"> | string
-    bodyWeightUnit?: StringFilter<"User"> | string
+    measurementUnit?: StringFilter<"User"> | string
     exerciseWeightUnit?: StringFilter<"User"> | string
     userExcercises?: UserExerciseListRelationFilter
     protocols?: ProtocolListRelationFilter
@@ -13564,7 +13564,7 @@ export namespace Prisma {
     weight?: SortOrder
     height?: SortOrder
     password?: SortOrder
-    bodyWeightUnit?: SortOrder
+    measurementUnit?: SortOrder
     exerciseWeightUnit?: SortOrder
     userExcercises?: UserExerciseOrderByRelationAggregateInput
     protocols?: ProtocolOrderByRelationAggregateInput
@@ -13584,7 +13584,7 @@ export namespace Prisma {
     weight?: FloatFilter<"User"> | number
     height?: FloatFilter<"User"> | number
     password?: StringFilter<"User"> | string
-    bodyWeightUnit?: StringFilter<"User"> | string
+    measurementUnit?: StringFilter<"User"> | string
     exerciseWeightUnit?: StringFilter<"User"> | string
     userExcercises?: UserExerciseListRelationFilter
     protocols?: ProtocolListRelationFilter
@@ -13601,7 +13601,7 @@ export namespace Prisma {
     weight?: SortOrder
     height?: SortOrder
     password?: SortOrder
-    bodyWeightUnit?: SortOrder
+    measurementUnit?: SortOrder
     exerciseWeightUnit?: SortOrder
     _count?: UserCountOrderByAggregateInput
     _avg?: UserAvgOrderByAggregateInput
@@ -13623,7 +13623,7 @@ export namespace Prisma {
     weight?: FloatWithAggregatesFilter<"User"> | number
     height?: FloatWithAggregatesFilter<"User"> | number
     password?: StringWithAggregatesFilter<"User"> | string
-    bodyWeightUnit?: StringWithAggregatesFilter<"User"> | string
+    measurementUnit?: StringWithAggregatesFilter<"User"> | string
     exerciseWeightUnit?: StringWithAggregatesFilter<"User"> | string
   }
 
@@ -14189,7 +14189,7 @@ export namespace Prisma {
     weight: number
     height: number
     password: string
-    bodyWeightUnit: string
+    measurementUnit: string
     exerciseWeightUnit: string
     userExcercises?: UserExerciseCreateNestedManyWithoutUserInput
     protocols?: ProtocolCreateNestedManyWithoutUserInput
@@ -14206,7 +14206,7 @@ export namespace Prisma {
     weight: number
     height: number
     password: string
-    bodyWeightUnit: string
+    measurementUnit: string
     exerciseWeightUnit: string
     userExcercises?: UserExerciseUncheckedCreateNestedManyWithoutUserInput
     protocols?: ProtocolUncheckedCreateNestedManyWithoutUserInput
@@ -14222,7 +14222,7 @@ export namespace Prisma {
     weight?: FloatFieldUpdateOperationsInput | number
     height?: FloatFieldUpdateOperationsInput | number
     password?: StringFieldUpdateOperationsInput | string
-    bodyWeightUnit?: StringFieldUpdateOperationsInput | string
+    measurementUnit?: StringFieldUpdateOperationsInput | string
     exerciseWeightUnit?: StringFieldUpdateOperationsInput | string
     userExcercises?: UserExerciseUpdateManyWithoutUserNestedInput
     protocols?: ProtocolUpdateManyWithoutUserNestedInput
@@ -14239,7 +14239,7 @@ export namespace Prisma {
     weight?: FloatFieldUpdateOperationsInput | number
     height?: FloatFieldUpdateOperationsInput | number
     password?: StringFieldUpdateOperationsInput | string
-    bodyWeightUnit?: StringFieldUpdateOperationsInput | string
+    measurementUnit?: StringFieldUpdateOperationsInput | string
     exerciseWeightUnit?: StringFieldUpdateOperationsInput | string
     userExcercises?: UserExerciseUncheckedUpdateManyWithoutUserNestedInput
     protocols?: ProtocolUncheckedUpdateManyWithoutUserNestedInput
@@ -14256,7 +14256,7 @@ export namespace Prisma {
     weight: number
     height: number
     password: string
-    bodyWeightUnit: string
+    measurementUnit: string
     exerciseWeightUnit: string
   }
 
@@ -14269,7 +14269,7 @@ export namespace Prisma {
     weight?: FloatFieldUpdateOperationsInput | number
     height?: FloatFieldUpdateOperationsInput | number
     password?: StringFieldUpdateOperationsInput | string
-    bodyWeightUnit?: StringFieldUpdateOperationsInput | string
+    measurementUnit?: StringFieldUpdateOperationsInput | string
     exerciseWeightUnit?: StringFieldUpdateOperationsInput | string
   }
 
@@ -14283,7 +14283,7 @@ export namespace Prisma {
     weight?: FloatFieldUpdateOperationsInput | number
     height?: FloatFieldUpdateOperationsInput | number
     password?: StringFieldUpdateOperationsInput | string
-    bodyWeightUnit?: StringFieldUpdateOperationsInput | string
+    measurementUnit?: StringFieldUpdateOperationsInput | string
     exerciseWeightUnit?: StringFieldUpdateOperationsInput | string
   }
 
@@ -14906,7 +14906,7 @@ export namespace Prisma {
     weight?: SortOrder
     height?: SortOrder
     password?: SortOrder
-    bodyWeightUnit?: SortOrder
+    measurementUnit?: SortOrder
     exerciseWeightUnit?: SortOrder
   }
 
@@ -14926,7 +14926,7 @@ export namespace Prisma {
     weight?: SortOrder
     height?: SortOrder
     password?: SortOrder
-    bodyWeightUnit?: SortOrder
+    measurementUnit?: SortOrder
     exerciseWeightUnit?: SortOrder
   }
 
@@ -14940,7 +14940,7 @@ export namespace Prisma {
     weight?: SortOrder
     height?: SortOrder
     password?: SortOrder
-    bodyWeightUnit?: SortOrder
+    measurementUnit?: SortOrder
     exerciseWeightUnit?: SortOrder
   }
 
@@ -16499,7 +16499,7 @@ export namespace Prisma {
     weight: number
     height: number
     password: string
-    bodyWeightUnit: string
+    measurementUnit: string
     exerciseWeightUnit: string
     protocols?: ProtocolCreateNestedManyWithoutUserInput
     weightPrograms?: WeightProgramCreateNestedManyWithoutUserInput
@@ -16515,7 +16515,7 @@ export namespace Prisma {
     weight: number
     height: number
     password: string
-    bodyWeightUnit: string
+    measurementUnit: string
     exerciseWeightUnit: string
     protocols?: ProtocolUncheckedCreateNestedManyWithoutUserInput
     weightPrograms?: WeightProgramUncheckedCreateNestedManyWithoutUserInput
@@ -16608,7 +16608,7 @@ export namespace Prisma {
     weight?: FloatFieldUpdateOperationsInput | number
     height?: FloatFieldUpdateOperationsInput | number
     password?: StringFieldUpdateOperationsInput | string
-    bodyWeightUnit?: StringFieldUpdateOperationsInput | string
+    measurementUnit?: StringFieldUpdateOperationsInput | string
     exerciseWeightUnit?: StringFieldUpdateOperationsInput | string
     protocols?: ProtocolUpdateManyWithoutUserNestedInput
     weightPrograms?: WeightProgramUpdateManyWithoutUserNestedInput
@@ -16624,7 +16624,7 @@ export namespace Prisma {
     weight?: FloatFieldUpdateOperationsInput | number
     height?: FloatFieldUpdateOperationsInput | number
     password?: StringFieldUpdateOperationsInput | string
-    bodyWeightUnit?: StringFieldUpdateOperationsInput | string
+    measurementUnit?: StringFieldUpdateOperationsInput | string
     exerciseWeightUnit?: StringFieldUpdateOperationsInput | string
     protocols?: ProtocolUncheckedUpdateManyWithoutUserNestedInput
     weightPrograms?: WeightProgramUncheckedUpdateManyWithoutUserNestedInput
@@ -16718,7 +16718,7 @@ export namespace Prisma {
     weight: number
     height: number
     password: string
-    bodyWeightUnit: string
+    measurementUnit: string
     exerciseWeightUnit: string
     userExcercises?: UserExerciseCreateNestedManyWithoutUserInput
     weightPrograms?: WeightProgramCreateNestedManyWithoutUserInput
@@ -16734,7 +16734,7 @@ export namespace Prisma {
     weight: number
     height: number
     password: string
-    bodyWeightUnit: string
+    measurementUnit: string
     exerciseWeightUnit: string
     userExcercises?: UserExerciseUncheckedCreateNestedManyWithoutUserInput
     weightPrograms?: WeightProgramUncheckedCreateNestedManyWithoutUserInput
@@ -16791,7 +16791,7 @@ export namespace Prisma {
     weight?: FloatFieldUpdateOperationsInput | number
     height?: FloatFieldUpdateOperationsInput | number
     password?: StringFieldUpdateOperationsInput | string
-    bodyWeightUnit?: StringFieldUpdateOperationsInput | string
+    measurementUnit?: StringFieldUpdateOperationsInput | string
     exerciseWeightUnit?: StringFieldUpdateOperationsInput | string
     userExcercises?: UserExerciseUpdateManyWithoutUserNestedInput
     weightPrograms?: WeightProgramUpdateManyWithoutUserNestedInput
@@ -16807,7 +16807,7 @@ export namespace Prisma {
     weight?: FloatFieldUpdateOperationsInput | number
     height?: FloatFieldUpdateOperationsInput | number
     password?: StringFieldUpdateOperationsInput | string
-    bodyWeightUnit?: StringFieldUpdateOperationsInput | string
+    measurementUnit?: StringFieldUpdateOperationsInput | string
     exerciseWeightUnit?: StringFieldUpdateOperationsInput | string
     userExcercises?: UserExerciseUncheckedUpdateManyWithoutUserNestedInput
     weightPrograms?: WeightProgramUncheckedUpdateManyWithoutUserNestedInput
@@ -17329,7 +17329,7 @@ export namespace Prisma {
     weight: number
     height: number
     password: string
-    bodyWeightUnit: string
+    measurementUnit: string
     exerciseWeightUnit: string
     userExcercises?: UserExerciseCreateNestedManyWithoutUserInput
     protocols?: ProtocolCreateNestedManyWithoutUserInput
@@ -17345,7 +17345,7 @@ export namespace Prisma {
     weight: number
     height: number
     password: string
-    bodyWeightUnit: string
+    measurementUnit: string
     exerciseWeightUnit: string
     userExcercises?: UserExerciseUncheckedCreateNestedManyWithoutUserInput
     protocols?: ProtocolUncheckedCreateNestedManyWithoutUserInput
@@ -17398,7 +17398,7 @@ export namespace Prisma {
     weight?: FloatFieldUpdateOperationsInput | number
     height?: FloatFieldUpdateOperationsInput | number
     password?: StringFieldUpdateOperationsInput | string
-    bodyWeightUnit?: StringFieldUpdateOperationsInput | string
+    measurementUnit?: StringFieldUpdateOperationsInput | string
     exerciseWeightUnit?: StringFieldUpdateOperationsInput | string
     userExcercises?: UserExerciseUpdateManyWithoutUserNestedInput
     protocols?: ProtocolUpdateManyWithoutUserNestedInput
@@ -17414,7 +17414,7 @@ export namespace Prisma {
     weight?: FloatFieldUpdateOperationsInput | number
     height?: FloatFieldUpdateOperationsInput | number
     password?: StringFieldUpdateOperationsInput | string
-    bodyWeightUnit?: StringFieldUpdateOperationsInput | string
+    measurementUnit?: StringFieldUpdateOperationsInput | string
     exerciseWeightUnit?: StringFieldUpdateOperationsInput | string
     userExcercises?: UserExerciseUncheckedUpdateManyWithoutUserNestedInput
     protocols?: ProtocolUncheckedUpdateManyWithoutUserNestedInput

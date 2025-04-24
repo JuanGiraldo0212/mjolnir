@@ -21,7 +21,7 @@ model User {
   weight             Float
   height             Float
   password           String
-  bodyWeightUnit     String
+  measurementUnit    String
   exerciseWeightUnit String
   userExcercises     UserExercise[]
   protocols          Protocol[]

@@ -124,7 +124,7 @@ exports.Prisma.UserScalarFieldEnum = {
   weight: 'weight',
   height: 'height',
   password: 'password',
-  bodyWeightUnit: 'bodyWeightUnit',
+  measurementUnit: 'measurementUnit',
   exerciseWeightUnit: 'exerciseWeightUnit'
 };
 
