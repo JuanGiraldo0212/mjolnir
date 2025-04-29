@@ -5,6 +5,8 @@ export async function POST(req: Request) {
   const {
     email,
     password,
+    firstName,
+    lastName,
     birthDate,
     gender,
     weight,
@@ -17,6 +19,8 @@ export async function POST(req: Request) {
     !email ||
     !password ||
     password.length < 8 ||
+    !firstName ||
+    !lastName ||
     !birthDate ||
     !gender ||
     weight == null ||
@@ -58,6 +62,8 @@ export async function POST(req: Request) {
     await createUser(
       email,
       hashedPassword,
+      firstName,
+      lastName,
       birthDate,
       gender,
       numericWeight,

@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "../ui/input";
 
-const formSchema = z.object({
+export const formSchema = z.object({
   email: z.string().email({ message: "Enter a valid email" }),
   password: z
     .string()

@@ -1,15 +1,28 @@
 "use client";
 
 import { useState } from "react";
+import { signIn } from "next-auth/react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import SignUpForm from "@/components/auth/sign-up-form";
 import LoginForm from "@/components/auth/login-form";
+import { z } from "zod";
+
+import { formSchema as signupSchema } from "@/components/auth/sign-up-form";
+import { formSchema as loginSchema } from "@/components/auth/login-form";
 
 const AuthPage = () => {
   const [isLogin, setIsLogin] = useState(true);
-  const onSubmit = async (data: any) => {
+  const onSubmit = async (
+    data: z.infer<typeof signupSchema> | z.infer<typeof loginSchema>
+  ) => {
     if (isLogin) {
+      const response = await signIn("credentials", {
+        redirect: false,
+        email: data.email,
+        password: data.password,
+      });
+      console.log(response);
       return;
     }
     try {

@@ -19,12 +19,18 @@ import { Calendar } from "@/components/ui/calendar";
 import { format } from "date-fns";
 import { Button } from "../ui/button";
 
-const formSchema = z.object({
+export const formSchema = z.object({
   email: z.string().email({ message: "Enter a valid email" }),
   password: z
     .string()
     .min(7, { message: "Password must be at least 7 characters" })
     .max(25, { message: "Password must be at most 25 characters" }),
+  firstName: z.string({
+    required_error: "Please enter your first name",
+  }),
+  lastName: z.string({
+    required_error: "Please enter your last name",
+  }),
   birthDate: z.date({
     required_error: "A date of birth is required",
   }),
@@ -82,6 +88,32 @@ const SignUpForm = ({ onSubmitParent }: { onSubmitParent: Function }) => {
               <FormLabel>Password</FormLabel>
               <FormControl>
                 <Input {...field} type="password" />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="firstName"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>First Name</FormLabel>
+              <FormControl>
+                <Input {...field} type="text" />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="lastName"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Last Name</FormLabel>
+              <FormControl>
+                <Input {...field} type="text" />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -173,6 +205,19 @@ const SignUpForm = ({ onSubmitParent }: { onSubmitParent: Function }) => {
         />
         <FormField
           control={form.control}
+          name="height"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Height</FormLabel>
+              <FormControl>
+                <Input {...field} type="number" />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
           name="measurementUnit"
           render={({ field }) => (
             <FormItem>
@@ -196,19 +241,6 @@ const SignUpForm = ({ onSubmitParent }: { onSubmitParent: Function }) => {
                     <FormLabel>Imperial</FormLabel>
                   </FormItem>
                 </RadioGroup>
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="height"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Height</FormLabel>
-              <FormControl>
-                <Input {...field} type="number" />
               </FormControl>
               <FormMessage />
             </FormItem>

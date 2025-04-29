@@ -5,6 +5,8 @@ const prisma = new PrismaClient();
 export const createUser = async (
   email: string,
   password: string,
+  firstName: string,
+  lastName: string,
   birthDate: Date,
   gender: string,
   height: number,
@@ -17,6 +19,8 @@ export const createUser = async (
       data: {
         email: email,
         password: password,
+        firstName: firstName,
+        lastName: lastName,
         birthDate: birthDate,
         gender: gender,
         height: height,

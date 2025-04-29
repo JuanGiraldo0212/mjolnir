@@ -1,6 +1,5 @@
 "use client";
 
-import { TrendingUp } from "lucide-react";
 import {
   Area,
   AreaChart,
@@ -14,7 +13,6 @@ import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -33,11 +31,11 @@ import { computeSmoothedWeight } from "./weight-utils";
 const chartConfig = {
   weight: {
     label: "Scale Weight",
-    color: "hsl(var(--chart-1))",
+    color: "hsl(var(--chart-2))",
   },
   smoothedWeight: {
     label: "Average weight",
-    color: "hsl(var(--chart-2))",
+    color: "hsl(var(--chart-1))",
   },
 } satisfies ChartConfig;
 
@@ -112,8 +110,7 @@ const WeightChart = ({
               />
               <Area
                 dataKey="weight"
-                type="linear"
-                dot={true}
+                type="natural"
                 fill="var(--color-weight)"
                 fillOpacity={0}
                 stroke="var(--color-weight)"
@@ -121,7 +118,8 @@ const WeightChart = ({
               />
               <Area
                 dataKey="smoothedWeight"
-                type="natural"
+                type="linear"
+                dot={period === "1W" || period === "1M" ? true : false}
                 fill="var(--color-smoothedWeight)"
                 fillOpacity={0}
                 stroke="var(--color-smoothedWeight)"
