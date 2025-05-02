@@ -276,7 +276,7 @@ const SignUpForm = ({ onSubmitParent }: { onSubmitParent: Function }) => {
             </FormItem>
           )}
         />
-        <Button type="submit">Submit</Button>
+        <Button type="submit">Sign up</Button>
       </form>
     </Form>
   );

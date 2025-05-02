@@ -62,7 +62,7 @@ const LoginForm = ({ onSubmitParent }: { onSubmitParent: Function }) => {
             </FormItem>
           )}
         />
-        <Button type="submit">Submit</Button>
+        <Button type="submit">Log in</Button>
       </form>
     </Form>
   );
